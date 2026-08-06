@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KKN DESA PAMULIHAN 03</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --bg-soft: #f6f8fb;
+        --ink: #20242c;
+        --muted: #6b7280;
+        --line: #e7eaf0;
+        --primary: #3e7cb1;
+        --primary-dark: #274a68;
+        --primary-soft: #eaf2f9;
+        --accent: #6fa8d0;
+        --accent-dark: #1c3d57;
+        --accent-soft: #e3eef7;
+        --radius: 12px;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.7;
+        font-size: 15.5px;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: var(--primary-dark);
+        letter-spacing: -0.01em;
+        line-height: 1.25;
+      }
+      strong {
+        color: var(--primary-dark);
+        font-weight: 600;
+      }
+      ::selection {
+        background: var(--accent-soft);
+        color: var(--primary-dark);
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Header */
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(6px);
+        z-index: 100;
+        border-bottom: 1px solid var(--line);
+      }
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 32px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-weight: 600;
+        color: var(--primary-dark);
+        font-family: "Poppins", sans-serif;
+        font-size: 16px;
+      }
+      .logo-dot {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 11.5px;
+        font-weight: 700;
+        color: #fff;
+        flex-shrink: 0;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+      }
+      nav a {
+        font-size: 13.5px;
+        font-weight: 500;
+        color: var(--ink);
+        transition: color 0.15s ease;
+      }
+      nav a:hover {
+        color: var(--primary);
+      }
+      .menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+      }
+      .menu-btn span {
+        width: 22px;
+        height: 2px;
+        background: var(--primary-dark);
+        border-radius: 2px;
+      }
+
+      /* Hero */
+      .hero {
+        text-align: center;
+        padding: 110px 0 90px;
+      }
+      .hero .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary);
+        background: var(--primary-soft);
+        padding: 7px 16px;
+        border-radius: 30px;
+        margin-bottom: 28px;
+      }
+      .hero h1 {
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 16px;
+      }
+      .hero .uni {
+        font-size: 15px;
+        color: var(--muted);
+        margin-bottom: 22px;
+      }
+      .hero .periode {
+        display: inline-block;
+        font-size: 12.5px;
+        font-weight: 600;
+        padding: 8px 18px;
+        border-radius: 20px;
+        background: var(--bg-soft);
+        color: var(--primary-dark);
+        border: 1px solid var(--line);
+      }
+      .hero-btns {
+        margin-top: 36px;
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 13px 26px;
+        border-radius: 9px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition:
+          opacity 0.15s ease,
+          background 0.15s ease;
+      }
+      .btn-blue {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-blue:hover {
+        background: var(--accent-dark);
+      }
+      .btn-outline {
+        border: 1.5px solid var(--primary-dark);
+        color: var(--primary-dark);
+      }
+      .btn-outline:hover {
+        background: var(--primary-dark);
+        color: #fff;
+      }
+
+      section {
+        padding: 96px 0;
+      }
+      hr.div {
+        border: none;
+        border-top: 1px solid var(--line);
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+      .section-title .kicker {
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 10px;
+        display: block;
+      }
+      .section-title h2 {
+        font-size: clamp(23px, 3vw, 28px);
+      }
+
+      /* Tentang */
+      #tentang {
+        border-top: 1px solid var(--line);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .about-grid .kicker {
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .about-grid h2 {
+        font-size: clamp(23px, 3vw, 28px);
+        margin: 12px 0 16px;
+      }
+      .about-grid p {
+        color: var(--muted);
+        margin-bottom: 14px;
+        font-size: 14.5px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .stat-box {
+        border-radius: var(--radius);
+        padding: 26px 18px;
+        text-align: center;
+        border: 1px solid var(--line);
+        background: var(--bg-soft);
+      }
+      .stat-box b {
+        display: block;
+        font-size: 26px;
+        color: var(--primary-dark);
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .stat-box span {
+        font-size: 11.5px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      /* Anggota */
+      #anggota {
+        background: var(--bg-soft);
+      }
+      .dpl-box {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        background: var(--bg);
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--primary);
+        border-radius: var(--radius);
+        padding: 28px 32px;
+        margin: 0 auto 54px;
+        max-width: 620px;
+        box-shadow: 0 8px 24px rgba(62, 124, 177, 0.08);
+      }
+      .dpl-box .avatar {
+        width: 84px;
+        height: 84px;
+        border-radius: 50%;
+        background: var(--primary-soft);
+        color: var(--primary-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border: 3px solid var(--primary-soft);
+        box-shadow: 0 0 0 3px var(--primary);
+      }
+      .dpl-box h4 {
+        font-size: 18px;
+        margin-bottom: 4px;
+        color: var(--ink);
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .dpl-box .role {
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .dpl-box .nidn {
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+      .tim-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .person {
+        text-align: center;
+        background: var(--bg);
+        border-radius: var(--radius);
+        padding: 28px 16px;
+        border: 1px solid var(--line);
+        transition:
+          border-color 0.15s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .person:hover {
+        border-color: var(--primary);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(62, 124, 177, 0.12);
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .person h4 {
+        font-size: 14.5px;
+        margin-bottom: 3px;
+        color: var(--ink);
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+      .avatar {
+        width: 78px;
+        height: 78px;
+        border-radius: 50%;
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--primary-dark);
+        background: var(--primary-soft);
+        overflow: hidden;
+        border: 3px solid var(--primary-soft);
+        box-shadow: 0 0 0 2px var(--primary);
+      }
+      .person .prodi {
+        font-size: 11.5px;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 4px;
+      }
+      .person .nim {
+        font-size: 11px;
+        color: var(--muted);
+        display: block;
+        margin-bottom: 7px;
+      }
+      .person .jobdesk {
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: var(--accent-dark);
+        background: var(--accent-soft);
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+      }
+      .person .ig-link {
+        display: inline-block;
+        font-size: 11.5px;
+        font-weight: 500;
+        color: var(--primary);
+      }
+      .person .ig-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Proker */
+      .filter-legend {
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        margin-bottom: 36px;
+        flex-wrap: wrap;
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .filter-legend span {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot.pendidikan {
+        background: var(--primary);
+      }
+      .dot.kesehatan {
+        background: var(--accent);
+      }
+      .dot.lingkungan {
+        background: var(--primary-dark);
+      }
+      .dot.ekonomi {
+        background: var(--accent-dark);
+      }
+      .proker-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .proker-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 26px;
+        transition: border-color 0.15s ease;
+      }
+      .proker-card:hover {
+        border-color: var(--primary);
+      }
+      .cat-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+      .proker-card h3 {
+        font-size: 16.5px;
+        margin-bottom: 8px;
+      }
+      .proker-card p {
+        font-size: 13.5px;
+        color: var(--muted);
+        margin-bottom: 10px;
+      }
+      .proker-card .target {
+        font-size: 12px;
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      /* Galeri */
+      #galeri {
+        background: var(--bg-soft);
+      }
+      .gal-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 130px;
+        gap: 10px;
+      }
+      .gal-grid div {
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: var(--bg);
+      }
+      .gal-grid div:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .yt-note {
+        margin-top: 18px;
+        font-size: 13px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      /* Timeline */
+      .timeline {
+        max-width: 660px;
+        margin: 0 auto;
+      }
+      .t-item {
+        display: flex;
+        gap: 18px;
+        padding-bottom: 30px;
+        position: relative;
+      }
+      .t-item:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 22px;
+        bottom: 0;
+        width: 2px;
+        background: var(--line);
+      }
+      .t-dot {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-top: 2px;
+        background: var(--primary);
+        border: 3px solid var(--bg);
+        box-shadow: 0 0 0 1px var(--line);
+      }
+      .t-item h4 {
+        font-size: 15px;
+        margin-bottom: 4px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .t-item .date {
+        font-size: 11.5px;
+        color: var(--primary);
+        font-weight: 700;
+        display: block;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .t-item p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* Peta */
+      .map-box {
+        height: 320px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--line);
+      }
+      .map-box iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .map-link {
+        display: block;
+        text-align: center;
+        margin-top: 16px;
+        font-size: 13.5px;
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .map-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Kontak */
+      #kontak {
+        background: var(--primary-dark);
+        color: #fff;
+      }
+      #kontak h2,
+      #kontak .kicker {
+        color: #fff;
+      }
+      #kontak .kicker {
+        opacity: 0.75;
+      }
+      .kontak-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 44px;
+      }
+      .kontak-item {
+        display: flex;
+        gap: 14px;
+        margin-bottom: 16px;
+        font-size: 13.5px;
+      }
+      .kontak-item b {
+        color: var(--accent);
+        min-width: 92px;
+        font-weight: 600;
+      }
+      .kontak-item span {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .social {
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+      }
+      .social a {
+        padding: 10px 18px;
+        border: 1.5px solid rgba(255, 255, 255, 0.28);
+        border-radius: 9px;
+        font-size: 13px;
+        font-weight: 500;
+        transition: background 0.15s ease;
+      }
+      .social a:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Testimoni */
+      .testi-box {
+        max-width: 680px;
+        margin: 0 auto;
+        text-align: center;
+        background: var(--bg-soft);
+        border-radius: var(--radius);
+        padding: 44px 38px;
+        border: 1px solid var(--line);
+      }
+      .testi-box p {
+        font-size: 16px;
+        color: var(--ink);
+        font-style: italic;
+        margin-bottom: 18px;
+      }
+      .testi-box .who {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .testi-box .who span {
+        display: block;
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 2px;
+      }
+
+      footer {
+        background: var(--primary-dark);
+        text-align: center;
+        padding: 24px 0;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.55);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 800px) {
+        nav ul {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          right: 0;
+          background: var(--bg);
+          flex-direction: column;
+          padding: 20px 32px;
+          gap: 16px;
+          transform: translateY(-130%);
+          transition: transform 0.25s ease;
+          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        }
+        nav ul.open {
+          transform: translateY(0);
+        }
+        .menu-btn {
+          display: flex;
+        }
+        .about-grid,
+        .kontak-grid {
+          grid-template-columns: 1fr;
+        }
+        .tim-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .proker-grid {
+          grid-template-columns: 1fr;
+        }
+        .gal-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .dpl-box {
+          flex-direction: column;
+          text-align: center;
+        }
+        section {
+          padding: 64px 0;
+        }
+        .hero {
+          padding: 80px 0 64px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <div class="logo-dot"><img src="img/logo kkn.jpeg" alt="Logo KKN Pamulihan 03" /></div>
+          KKN DESA PAMULIHAN 03
+        </div>
+        <nav>
+          <ul id="navList">
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#anggota">Anggota</a></li>
+            <li><a href="#proker">Proker</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Buka menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+    <!-- 1. Hero / Landing -->
+    <div class="hero">
+      <div class="container">
+        <span class="eyebrow">Kuliah Kerja Nyata 2026</span>
+        <h1>KKN Desa Pamulihan 03</h1>
+        <p class="uni">Universitas Muhammadiyah Bandung</p>
+        <span class="periode">Periode Agustus – September 2026</span>
+        <div class="hero-btns">
+          <a href="#proker" class="btn btn-blue">Lihat Program Kerja</a>
+          <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Tentang Kelompok -->
+    <section id="tentang">
+      <div class="container">
+        <div class="about-grid reveal">
+          <div>
+            <span class="kicker">Tentang Kelompok</span>
+            <h2>Siapa Kami</h2>
+            <p>KKN Desa Pamulihan 03 ditempatkan di <strong>Desa Pamulihan, Kecamatan Pamulihan, Kabupaten Sumedang</strong> selama masa pengabdian.</p>
+            <p>Tema besar kelompok kami adalah <strong>"Inovasi Berbasis Potensi Lokal untuk Desa Mandiri dan Berkelanjutan"</strong> — fokus pada bidang pendidikan, kesehatan, lingkungan, dan ekonomi warga.</p>
+          </div>
+          <div class="stats">
+            <div class="stat-box"><b>11</b><span>Anggota Kelompok</span></div>
+            <div class="stat-box"><b>30</b><span>Hari Penugasan</span></div>
+            <div class="stat-box"><b>8</b><span>Program Kerja</span></div>
+            <div class="stat-box"><b>4</b><span>Bidang Fokus</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Profil Anggota -->
+    <section id="anggota">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Kenali Kami</span>
+          <h2>Profil Anggota</h2>
+        </div>
+
+        <div class="dpl-box reveal">
+          <div class="avatar"><img src="img/payudi.jpeg" alt="Yudi Haryadi" /></div>
+          <div>
+            <span class="role">Dosen Pembimbing Lapangan</span>
+            <h4>Yudi Haryadi, S.E., M.M.</h4>
+            <span class="nidn">NIDN 2116067501</span>
+          </div>
+        </div>
+
+        <div class="tim-grid reveal">
+          <div class="person">
+            <div class="avatar"><img src="img/fauzan.jpg" alt="Muhammad Fauzan Kamali" /></div>
+            <h4>Muhammad Fauzan Kamali</h4>
+            <span class="prodi">Ekonomi Syariah</span><span class="nim">NIM 230415013</span><span class="jobdesk">Ketua</span>
+            <a class="ig-link" href="https://www.instagram.com/mfauzankamali/" target="_blank" rel="noopener">@mfauzankamali</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/avilla.jpg" alt="Avila Elvana Zahra" /></div>
+            <h4>Avila Elvana Zahra</h4>
+            <span class="prodi">Pendidikan Agama Islam</span><span class="nim">NIM 230414013</span><span class="jobdesk">Acara</span>
+            <a class="ig-link" href="https://instagram.com/username_avila" target="_blank" rel="noopener">@username_avila</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img//haura.jpg" alt="Haura Syahla Nurazizah" /></div>
+            <h4>Haura Syahla Nurazizah</h4>
+            <span class="prodi">Farmasi</span><span class="nim">NIM 230106053</span><span class="jobdesk">Bendahara</span>
+            <a class="ig-link" href="https://instagram.com/username_haura" target="_blank" rel="noopener">@username_haura</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/muadz.jpg" alt="Muadz Romzanul Haq" /></div>
+            <h4>Muadz Romzanul Haq</h4>
+            <span class="prodi">Komunikasi dan Penyiaran Islam</span><span class="nim">NIM 230417024</span><span class="jobdesk">Acara</span>
+            <a class="ig-link" href="https://www.instagram.com/mrzzlhq/" target="_blank" rel="noopener">@mrzzlhq</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/sandi.jpg" alt="Muhammad Sandi" /></div>
+            <h4>Muhammad Sandi</h4>
+            <span class="prodi">Teknik Informatika</span><span class="nim">NIM 230102096</span><span class="jobdesk">Logistik</span>
+            <a class="ig-link" href="https://www.instagram.com/m.sandiiiii/" target="_blank" rel="noopener">@m.sandiiiii</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/mutia.jpg" alt="Mutia Agita Ardianti" /></div>
+            <h4>Mutia Agita Ardianti</h4>
+            <span class="prodi">Ilmu Komunikasi</span><span class="nim">NIM 230208107</span><span class="jobdesk">Humas</span>
+            <a class="ig-link" href="https://instagram.com/username_mutia" target="_blank" rel="noopener">@username_mutia</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/nira.jpg" alt="Nira Destiani Dewi" /></div>
+            <h4>Nira Destiani Dewi</h4>
+            <span class="prodi">Manajemen</span><span class="nim">NIM 230313207</span><span class="jobdesk">Sekretaris</span>
+            <a class="ig-link" href="https://instagram.com/username_nira" target="_blank" rel="noopener">@username_nira</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/nisa.jpg" alt="Nisa Septia Wulandari" /></div>
+            <h4>Nisa Septia Wulandari</h4>
+            <span class="prodi">Manajemen</span><span class="nim">NIM 230313210</span><span class="jobdesk">PDD</span>
+            <a class="ig-link" href="https://instagram.com/username_nisa" target="_blank" rel="noopener">@username_nisa</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/sheptia.jpg" alt="Sheptia Amelia Putri" /></div>
+            <h4>Sheptia Amelia Putri</h4>
+            <span class="prodi">Psikologi</span><span class="nim">NIM 230207170</span><span class="jobdesk">Humas</span>
+            <a class="ig-link" href="https://instagram.com/username_sheptia" target="_blank" rel="noopener">@username_sheptia</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/zamzam.jpg" alt="Zam Zam Nur Hidayah" /></div>
+            <h4>Zam Zam Nur Hidayah</h4>
+            <span class="prodi">Akuntansi</span><span class="nim">NIM 230312102</span><span class="jobdesk">PDD</span>
+            <a class="ig-link" href="https://www.instagram.com/zamzam_nurhidayah/" target="_blank" rel="noopener">@zamzam_nurhidayah</a>
+          </div>
+          <div class="person">
+            <div class="avatar"><img src="img/zandini.jpg" alt="Zandini Azhara" /></div>
+            <h4>Zandini Azhara</h4>
+            <span class="prodi">Administrasi Publik</span><span class="nim">NIM 230211117</span><span class="jobdesk">Logistik</span>
+            <a class="ig-link" href="https://instagram.com/username_zandini" target="_blank" rel="noopener">@username_zandini</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Program Kerja -->
+    <section id="proker">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Apa yang Kami Kerjakan</span>
+          <h2>Program Kerja Unggulan</h2>
+        </div>
+        <div class="filter-legend reveal">
+          <span><i class="dot pendidikan"></i>Pendidikan</span>
+          <span><i class="dot kesehatan"></i>Kesehatan</span>
+          <span><i class="dot lingkungan"></i>Lingkungan</span>
+          <span><i class="dot ekonomi"></i>Ekonomi</span>
+        </div>
+        <div class="proker-grid reveal">
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot pendidikan"></i>Pendidikan</span>
+            <h3>Taman Baca & Bimbel Anak</h3>
+            <p>Ruang belajar sore untuk anak-anak SD dengan buku bacaan sumbangan donatur.</p>
+            <span class="target">Sasaran: Anak usia 6–12 tahun</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot kesehatan"></i>Kesehatan</span>
+            <h3>Sosialisasi Gizi & Stunting</h3>
+            <p>Edukasi bagi ibu hamil dan balita bekerja sama dengan Posyandu setempat.</p>
+            <span class="target">Sasaran: Ibu hamil & balita</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot lingkungan"></i>Lingkungan</span>
+            <h3>Bank Sampah Dusun</h3>
+            <p>Pembentukan unit bank sampah sebagai langkah pengelolaan sampah rumah tangga.</p>
+            <span class="target">Sasaran: Seluruh warga dusun</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot ekonomi"></i>Ekonomi</span>
+            <h3>Pelatihan Digital Marketing UMKM</h3>
+            <p>Pendampingan pelaku UMKM memasarkan produk lewat media sosial dan marketplace.</p>
+            <span class="target">Sasaran: Pelaku UMKM desa</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot lingkungan"></i>Lingkungan</span>
+            <h3>Pelatihan Hidroponik</h3>
+            <p>Demonstrasi menanam sayur dengan sistem hidroponik sederhana di lahan sempit.</p>
+            <span class="target">Sasaran: Ibu-ibu PKK</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot pendidikan"></i>Pendidikan</span>
+            <h3>Plangisasi & Penataan Jalan</h3>
+            <p>Pemasangan penanda arah dan nama gang untuk memudahkan mobilitas warga.</p>
+            <span class="target">Sasaran: Seluruh warga desa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Galeri Kegiatan -->
+    <section id="galeri">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Dokumentasi</span>
+          <h2>Galeri Kegiatan</h2>
+        </div>
+        <div class="gal-grid reveal">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p class="yt-note">Foto dokumentasi kegiatan akan ditambahkan seiring berjalannya program KKN.</p>
+      </div>
+    </section>
+
+    <!-- 6. Timeline -->
+    <section id="timeline">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Progress Kegiatan</span>
+          <h2>Timeline KKN</h2>
+        </div>
+        <div class="timeline reveal">
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">14 Juli 2026</span>
+              <h4>Penerjunan & Silaturahmi dengan Perangkat Desa</h4>
+              <p>Perkenalan kelompok dan survei awal kondisi desa.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">21 Juli 2026</span>
+              <h4>Posyandu Keliling & Sosialisasi Gizi</h4>
+              <p>Penimbangan balita dan edukasi gizi seimbang.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">29 Juli 2026</span>
+              <h4>Pelatihan Digital Marketing UMKM</h4>
+              <p>Pendampingan pelaku UMKM membuat toko daring.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">5 Agustus 2026</span>
+              <h4>Peluncuran Bank Sampah</h4>
+              <p>Peresmian unit bank sampah pertama di desa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Peta Lokasi -->
+    <section id="peta">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Di Mana Kami</span>
+          <h2>Peta Lokasi</h2>
+        </div>
+        <div class="map-box reveal">
+          <iframe src="https://www.google.com/maps?q=-6.8762533,107.8258075&z=15&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a class="map-link" href="https://maps.app.goo.gl/f5iRJmK2weyGmHUL8" target="_blank" rel="noopener">Buka di Google Maps →</a>
+      </div>
+    </section>
+
+    <!-- 8. Kontak & Sosial Media -->
+    <section id="kontak">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Ada Pertanyaan?</span>
+          <h2>Kontak & Sosial Media</h2>
+        </div>
+        <div class="kontak-grid reveal">
+          <div>
+            <div class="kontak-item"><b>Alamat</b><span>Desa Pamulihan, Kecamatan Pamulihan, Kabupaten Sumedang</span></div>
+            <div class="kontak-item"><b>Koordinator</b><span>Muhammad Fauzan Kamali — 0852-9408-8565</span></div>
+            <div class="kontak-item"><b>Email</b><span>kknpamulihan03@gmail.com</span></div>
+          </div>
+          <div>
+            <p style="opacity: 0.85; margin-bottom: 14px; font-size: 14px">Ikuti media sosial kami untuk update kegiatan terbaru.</p>
+            <div class="social">
+              <a href="https://www.instagram.com/kknpamulihan3?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.tiktok.com/@kknpamulihan3" target="_blank" rel="noopener">TikTok</a>
+              <a href="#">YouTube</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Testimoni / Sambutan -->
+    <section id="testimoni">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Sambutan</span>
+          <h2>Kata Mereka</h2>
+        </div>
+        <div class="testi-box reveal">
+          <p>"KALO ADA ISI"</p>
+          <div class="who">Bapak Kepala Desa<span>Desa Pamulihan</span></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 KKN DESA PAMULIHAN 03 — Desa Pamulihan, Kecamatan Pamulihan, Kabupaten Sumedang</footer>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const navList = document.getElementById("navList");
+      menuBtn.addEventListener("click", () => navList.classList.toggle("open"));
+      navList.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => navList.classList.remove("open")));
+
+      const revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("in"));
+      }
+    </script>
+  </body>
+</html>
