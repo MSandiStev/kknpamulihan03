@@ -130,6 +130,12 @@
         font-weight: 700;
         color: #fff;
         flex-shrink: 0;
+        overflow: hidden;
+      }
+      .logo-dot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
       nav ul {
         list-style: none;
@@ -477,6 +483,9 @@
       .dot.ekonomi {
         background: var(--accent-dark);
       }
+      .dot.sosial {
+        background: #64748b;
+      }
       .proker-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -529,6 +538,13 @@
         border-radius: 10px;
         border: 1px solid var(--line);
         background: var(--bg);
+        overflow: hidden;
+      }
+      .gal-grid div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
       }
       .gal-grid div:nth-child(1) {
         grid-column: span 2;
@@ -774,7 +790,6 @@
         }
       }
     </style>
-    </style>
   </head>
   <body>
     <header>
@@ -824,7 +839,7 @@
           <div class="stats">
             <div class="stat-box"><b>11</b><span>Anggota Kelompok</span></div>
             <div class="stat-box"><b>30</b><span>Hari Penugasan</span></div>
-            <div class="stat-box"><b>8</b><span>Program Kerja</span></div>
+            <div class="stat-box"><b>10</b><span>Program Kerja</span></div>
             <div class="stat-box"><b>4</b><span>Bidang Fokus</span></div>
           </div>
         </div>
@@ -931,42 +946,67 @@
           <span><i class="dot kesehatan"></i>Kesehatan</span>
           <span><i class="dot lingkungan"></i>Lingkungan</span>
           <span><i class="dot ekonomi"></i>Ekonomi</span>
+          <span><i class="dot sosial"></i>Sosial</span>
         </div>
         <div class="proker-grid reveal">
           <div class="proker-card">
-            <span class="cat-tag"><i class="dot pendidikan"></i>Pendidikan</span>
-            <h3>Taman Baca & Bimbel Anak</h3>
-            <p>Ruang belajar sore untuk anak-anak SD dengan buku bacaan sumbangan donatur.</p>
-            <span class="target">Sasaran: Anak usia 6–12 tahun</span>
-          </div>
-          <div class="proker-card">
-            <span class="cat-tag"><i class="dot kesehatan"></i>Kesehatan</span>
-            <h3>Sosialisasi Gizi & Stunting</h3>
-            <p>Edukasi bagi ibu hamil dan balita bekerja sama dengan Posyandu setempat.</p>
-            <span class="target">Sasaran: Ibu hamil & balita</span>
-          </div>
-          <div class="proker-card">
             <span class="cat-tag"><i class="dot lingkungan"></i>Lingkungan</span>
-            <h3>Bank Sampah Dusun</h3>
-            <p>Pembentukan unit bank sampah sebagai langkah pengelolaan sampah rumah tangga.</p>
-            <span class="target">Sasaran: Seluruh warga dusun</span>
+            <h3>Inovasi Alat Pengelolaan Sampah Berbasis Kayu</h3>
+            <p>Alat pengelolaan sampah untuk mendukung pemilahan sampah warga demi lingkungan yang lebih tertib dan berkelanjutan.</p>
+            <span class="target">Sasaran: Seluruh warga desa</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot pendidikan"></i>Pendidikan</span>
+            <h3>Website E-Book Desa Pamulihan</h3>
+            <p>Media literasi digital yang mendukung pembelajaran siswa SD dan bisa diakses masyarakat umum.</p>
+            <span class="target">Sasaran: Siswa SD & masyarakat umum</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot pendidikan"></i>Pendidikan</span>
+            <h3>Pendataan Anak Tidak Sekolah (ATS)</h3>
+            <p>Verifikasi data ATS jenjang SD, SMP, dan SMA sebagai bahan pendukung pemerintah desa di bidang pendidikan.</p>
+            <span class="target">Sasaran: Anak usia sekolah SD–SMA</span>
           </div>
           <div class="proker-card">
             <span class="cat-tag"><i class="dot ekonomi"></i>Ekonomi</span>
-            <h3>Pelatihan Digital Marketing UMKM</h3>
-            <p>Pendampingan pelaku UMKM memasarkan produk lewat media sosial dan marketplace.</p>
-            <span class="target">Sasaran: Pelaku UMKM desa</span>
+            <h3>Edukasi Pengelolaan Keuangan Syariah Sejak Dini</h3>
+            <p>Meningkatkan pemahaman peserta tentang pengelolaan keuangan syariah dan pentingnya perencanaan sejak dini.</p>
+            <span class="target">Sasaran: Ibu-ibu & remaja desa</span>
           </div>
           <div class="proker-card">
             <span class="cat-tag"><i class="dot lingkungan"></i>Lingkungan</span>
-            <h3>Pelatihan Hidroponik</h3>
-            <p>Demonstrasi menanam sayur dengan sistem hidroponik sederhana di lahan sempit.</p>
-            <span class="target">Sasaran: Ibu-ibu PKK</span>
+            <h3>Reflektor Jalan: Cahaya Petunjuk Arah</h3>
+            <p>Pemasangan reflektor jalan di titik rawan untuk meningkatkan keamanan pengguna jalan, terutama malam hari.</p>
+            <span class="target">Sasaran: Pengguna jalan desa</span>
           </div>
           <div class="proker-card">
             <span class="cat-tag"><i class="dot pendidikan"></i>Pendidikan</span>
-            <h3>Plangisasi & Penataan Jalan</h3>
-            <p>Pemasangan penanda arah dan nama gang untuk memudahkan mobilitas warga.</p>
+            <h3>Lentera (Literasi, Edukasi, dan Karakter)</h3>
+            <p>Sosialisasi interaktif untuk meningkatkan budaya literasi, pendidikan karakter, dan perilaku positif siswa SD.</p>
+            <span class="target">Sasaran: Siswa sekolah dasar</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot lingkungan"></i>Lingkungan</span>
+            <h3>Plang Sampah: Papan Edukasi Waktu Urai Sampah</h3>
+            <p>Papan edukasi waktu penguraian sampah sebagai media informasi untuk menumbuhkan kesadaran lingkungan warga.</p>
+            <span class="target">Sasaran: Seluruh warga desa</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot pendidikan"></i>Pendidikan</span>
+            <h3>Langkah Qur'ani</h3>
+            <p>Pembelajaran Al-Qur'an rutin bersama ustaz/ustazah setempat untuk anak-anak desa.</p>
+            <span class="target">Sasaran: Anak-anak desa</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot kesehatan"></i>Kesehatan</span>
+            <h3>Penyuluhan Stunting: Generasi Sehat Bebas Stunting</h3>
+            <p>Edukasi pencegahan stunting, gizi seimbang, dan kesehatan ibu serta anak bagi masyarakat.</p>
+            <span class="target">Sasaran: Ibu hamil & balita</span>
+          </div>
+          <div class="proker-card">
+            <span class="cat-tag"><i class="dot sosial"></i>Sosial</span>
+            <h3>Perayaan HUT RI</h3>
+            <p>Partisipasi mahasiswa dalam rangkaian kegiatan HUT RI untuk memperkuat kebersamaan dan semangat gotong royong.</p>
             <span class="target">Sasaran: Seluruh warga desa</span>
           </div>
         </div>
@@ -981,7 +1021,7 @@
           <h2>Galeri Kegiatan</h2>
         </div>
         <div class="gal-grid reveal">
-          <div></div>
+          <div><img src="img/tim-kkn-pamulihan-03.jpg" alt="Tim KKN Desa Pamulihan 03" /></div>
           <div></div>
           <div></div>
           <div></div>
@@ -1003,33 +1043,81 @@
           <div class="t-item">
             <div class="t-dot"></div>
             <div>
-              <span class="date">14 Juli 2026</span>
-              <h4>Penerjunan & Silaturahmi dengan Perangkat Desa</h4>
-              <p>Perkenalan kelompok dan survei awal kondisi desa.</p>
-            </div>
-          </div>
-          <div class="t-item">
-            <div class="t-dot"></div>
-            <div>
-              <span class="date">21 Juli 2026</span>
-              <h4>Posyandu Keliling & Sosialisasi Gizi</h4>
-              <p>Penimbangan balita dan edukasi gizi seimbang.</p>
-            </div>
-          </div>
-          <div class="t-item">
-            <div class="t-dot"></div>
-            <div>
-              <span class="date">29 Juli 2026</span>
-              <h4>Pelatihan Digital Marketing UMKM</h4>
-              <p>Pendampingan pelaku UMKM membuat toko daring.</p>
+              <span class="date">1 Agustus 2026</span>
+              <h4>Pendataan Anak Tidak Sekolah (ATS)</h4>
+              <p>Verifikasi data ATS jenjang SD, SMP, dan SMA di lingkungan desa.</p>
             </div>
           </div>
           <div class="t-item">
             <div class="t-dot"></div>
             <div>
               <span class="date">5 Agustus 2026</span>
-              <h4>Peluncuran Bank Sampah</h4>
-              <p>Peresmian unit bank sampah pertama di desa.</p>
+              <h4>Langkah Qur'ani</h4>
+              <p>Pembelajaran Al-Qur'an rutin bersama ustaz/ustazah setempat untuk anak-anak desa.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">9 Agustus 2026</span>
+              <h4>Penyuluhan Stunting</h4>
+              <p>Edukasi pencegahan stunting, gizi seimbang, dan kesehatan ibu serta anak.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">13 Agustus 2026</span>
+              <h4>Lentera (Literasi, Edukasi, dan Karakter)</h4>
+              <p>Sosialisasi interaktif literasi dan pendidikan karakter untuk siswa sekolah dasar.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">17 Agustus 2026</span>
+              <h4>Perayaan HUT RI</h4>
+              <p>Partisipasi mahasiswa dalam rangkaian kegiatan HUT RI bersama warga desa.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">21 Agustus 2026</span>
+              <h4>Edukasi Keuangan Syariah Sejak Dini</h4>
+              <p>Sosialisasi pengelolaan keuangan sesuai prinsip syariah dan perencanaan sejak dini.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">25 Agustus 2026</span>
+              <h4>Pemasangan Reflektor Jalan</h4>
+              <p>Pemasangan reflektor pada titik rawan untuk keamanan pengguna jalan malam hari.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">29 Agustus 2026</span>
+              <h4>Pemasangan Plang Sampah</h4>
+              <p>Papan edukasi waktu penguraian sampah untuk meningkatkan kesadaran lingkungan warga.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">2 September 2026</span>
+              <h4>Peluncuran Alat Pengelolaan Sampah Berbasis Kayu</h4>
+              <p>Uji coba alat pemilahan sampah hasil inovasi kelompok bersama warga.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">6 September 2026</span>
+              <h4>Peluncuran Website E-Book Desa Pamulihan</h4>
+              <p>Peresmian website e-book sebagai media literasi digital bagi masyarakat dan siswa SD.</p>
             </div>
           </div>
         </div>
