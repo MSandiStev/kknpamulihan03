@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KKN DESA PAMULIHAN 03</title>
+    <link rel="icon" type="image/jpeg" href="img/logokkn.jpeg" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
@@ -831,6 +832,35 @@
         width: 16px;
         height: 16px;
       }
+      .gal-caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 22px 12px 10px;
+        background: linear-gradient(180deg, rgba(23, 41, 61, 0) 0%, rgba(23, 41, 61, 0.82) 100%);
+        color: #fff;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .gal-caption b {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 2px;
+        line-height: 1.3;
+      }
+      .gal-caption span {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 10.5px;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.82);
+        line-height: 1.35;
+      }
       .gal-grid div img {
         width: 100%;
         height: 100%;
@@ -904,6 +934,34 @@
       }
       .lightbox.open img {
         transform: scale(1);
+      }
+      .lightbox-imgwrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: min(880px, 90vw);
+      }
+      .lightbox-caption {
+        margin-top: 14px;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 13.5px;
+        font-weight: 500;
+        text-align: center;
+        max-width: 640px;
+      }
+      .lightbox-caption b {
+        display: block;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .lightbox-caption span {
+        display: block;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
       }
       .lightbox-close,
       .lightbox-nav {
@@ -1280,7 +1338,7 @@
     <header>
       <div class="container">
         <div class="logo">
-          <div class="logo-dot"><img src="img/logo kkn.jpeg" alt="Logo KKN Pamulihan 03" /></div>
+          <div class="logo-dot"><img src="img/logokkn.jpeg" alt="Logo KKN Pamulihan 03" /></div>
           KKN DESA PAMULIHAN 03
         </div>
         <nav>
@@ -1506,8 +1564,9 @@
           <h2>Galeri Kegiatan</h2>
         </div>
         <div class="gal-grid reveal" id="galGrid">
-          <div class="gal-photo" data-full="img/kegiatan1.jpeg" data-caption="Tim KKN Desa Pamulihan 03">
-            <img src="img/kegiatan1.jpeg" alt="Tim KKN Desa Pamulihan 03" />
+          <div class="gal-photo" data-full="img/kegiatan1.jpeg" data-caption="Konfirmasi Kehadiran Ke Desa — Konfirmasi kehadiran kelompok KKN ke desa serta arahan dari pihak desa">
+            <img src="img/kegiatan1.jpeg" alt="Konfirmasi Kehadiran Ke Desa" />
+            <span class="gal-caption"><b>Konfirmasi Kehadiran Ke Desa</b><span>Konfirmasi kehadiran kelompok KKN ke desa serta arahan dari pihak desa.</span></span>
             <span class="zoom-hint"
               ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1515,8 +1574,13 @@
                 <path d="M11 8v6M8 11h6" /></svg
             ></span>
           </div>
-          <div class="gal-photo" data-full="img/kegiatan2.jpeg" data-caption="Kegiatan KKN Desa Pamulihan 03">
-            <img src="img/kegiatan2.jpeg" alt="Kegiatan KKN Desa Pamulihan 03" />
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan2.jpeg"
+            data-caption="Menghadiri Musyawarah Agenda Kegiatan Desa Pamulihan — Mengikuti musyawarah bersama Pemerintah Desa Pamulihan untuk mengetahui agenda kegiatan desa serta melakukan koordinasi awal pelaksanaan program KKN"
+          >
+            <img src="img/kegiatan2.jpeg" alt="Menghadiri Musyawarah Agenda Kegiatan Desa Pamulihan" />
+            <span class="gal-caption"><b>Musyawarah Agenda Kegiatan Desa</b><span>Mengikuti musyawarah bersama Pemerintah Desa Pamulihan untuk mengetahui agenda kegiatan desa serta koordinasi awal pelaksanaan program KKN.</span></span>
             <span class="zoom-hint"
               ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1524,13 +1588,21 @@
                 <path d="M11 8v6M8 11h6" /></svg
             ></span>
           </div>
-          <div class="gal-empty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="5" width="18" height="14" rx="2.5" />
-              <circle cx="9" cy="11" r="2" />
-              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
-            </svg>
-            <span>Segera Hadir</span>
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan3.jpeg"
+            data-caption="Diskusi dengan Ibu Majelis — Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan"
+          >
+            <img src="img/kegiatan3.jpeg" alt="Diskusi dengan Ibu Majelis" />
+            <span class="gal-caption"
+              ><b>Diskusi dengan Ibu Majelis</b><span>Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan.</span></span
+            >
+            <span class="zoom-hint"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+                <path d="M11 8v6M8 11h6" /></svg
+            ></span>
           </div>
           <div class="gal-empty">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -1569,7 +1641,10 @@
       <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Sebelumnya">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
       </button>
-      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-imgwrap">
+        <img id="lightboxImg" src="" alt="" />
+        <span class="lightbox-caption" id="lightboxCaption"></span>
+      </div>
       <button class="lightbox-nav next" id="lightboxNext" aria-label="Berikutnya">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6" /></svg>
       </button>
@@ -1584,6 +1659,30 @@
           <h2>Timeline KKN</h2>
         </div>
         <div class="timeline reveal">
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">Hari 1</span>
+              <h4>Konfirmasi Kehadiran Ke Desa</h4>
+              <p>Konfirmasi kehadiran kelompok KKN ke desa serta arahan dari pihak desa.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">Hari 2</span>
+              <h4>Menghadiri Musyawarah Agenda Kegiatan Desa Pamulihan</h4>
+              <p>Mengikuti musyawarah bersama Pemerintah Desa Pamulihan untuk mengetahui agenda kegiatan desa serta melakukan koordinasi awal pelaksanaan program KKN.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">Hari 3</span>
+              <h4>Diskusi dengan Ibu Majelis</h4>
+              <p>Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan.</p>
+            </div>
+          </div>
           <div class="t-item">
             <div class="t-dot"></div>
             <div>
@@ -1739,13 +1838,6 @@
                 </svg>
                 TikTok
               </a>
-              <a href="#">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2.5" y="6" width="19" height="12" rx="3.5" />
-                  <path d="m10.5 9.5 5 2.5-5 2.5Z" fill="currentColor" stroke="none" />
-                </svg>
-                YouTube
-              </a>
             </div>
           </div>
         </div>
@@ -1833,6 +1925,7 @@
       const galPhotos = Array.from(document.querySelectorAll(".gal-photo"));
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxCaption = document.getElementById("lightboxCaption");
       const lightboxCounter = document.getElementById("lightboxCounter");
       const lightboxClose = document.getElementById("lightboxClose");
       const lightboxPrev = document.getElementById("lightboxPrev");
@@ -1843,7 +1936,9 @@
         currentGalIndex = index;
         const photo = galPhotos[currentGalIndex];
         lightboxImg.src = photo.dataset.full;
-        lightboxImg.alt = photo.dataset.caption || "";
+        const [capTitle, capDesc] = (photo.dataset.caption || "").split(" — ");
+        lightboxImg.alt = capTitle || "";
+        lightboxCaption.innerHTML = capDesc ? `<b>${capTitle}</b><span>${capDesc}</span>` : capTitle ? `<b>${capTitle}</b>` : "";
         lightboxCounter.textContent = `${currentGalIndex + 1} / ${galPhotos.length}`;
         lightbox.classList.add("open");
         document.body.style.overflow = "hidden";
