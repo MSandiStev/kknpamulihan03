@@ -93,6 +93,115 @@
         transform: translateY(0);
       }
 
+      /* Animasi umum */
+      @keyframes heroFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes heroBgZoom {
+        from {
+          transform: scale(1.12);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      @keyframes spinSlow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes pulseRing {
+        0% {
+          box-shadow: 0 0 0 0 rgba(62, 124, 177, 0.45);
+        }
+        70% {
+          box-shadow: 0 0 0 8px rgba(62, 124, 177, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(62, 124, 177, 0);
+        }
+      }
+      @keyframes lineGrow {
+        from {
+          transform: scaleY(0);
+        }
+        to {
+          transform: scaleY(1);
+        }
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: -150% 0;
+        }
+        100% {
+          background-position: 250% 0;
+        }
+      }
+      /* Progress bar scroll */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        background: linear-gradient(90deg, var(--accent), var(--primary-dark));
+        z-index: 999;
+        transition: width 0.1s ease-out;
+      }
+      /* Tombol kembali ke atas */
+      .back-to-top {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(39, 74, 104, 0.28);
+        opacity: 0;
+        transform: translateY(14px) scale(0.9);
+        pointer-events: none;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease,
+          background 0.15s ease;
+        z-index: 90;
+      }
+      .back-to-top.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+      }
+      .back-to-top:hover {
+        background: var(--primary-dark);
+      }
+
       /* Header */
       header {
         position: sticky;
@@ -131,6 +240,10 @@
         color: #fff;
         flex-shrink: 0;
         overflow: hidden;
+        transition: transform 0.35s ease;
+      }
+      .logo:hover .logo-dot {
+        transform: rotate(8deg) scale(1.06);
       }
       .logo-dot img {
         width: 100%;
@@ -143,13 +256,31 @@
         gap: 30px;
       }
       nav a {
+        position: relative;
         font-size: 13.5px;
         font-weight: 500;
         color: var(--ink);
         transition: color 0.15s ease;
+        padding-bottom: 3px;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.25s ease;
       }
       nav a:hover {
         color: var(--primary);
+      }
+      nav a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
       }
       .menu-btn {
         display: none;
@@ -184,6 +315,7 @@
         background-size: cover;
         background-position: center 38%;
         z-index: -2;
+        animation: heroBgZoom 1.4s ease-out both;
       }
       .hero::after {
         content: "";
@@ -205,17 +337,23 @@
         border-radius: 30px;
         margin-bottom: 28px;
         backdrop-filter: blur(4px);
+        opacity: 0;
+        animation: heroFadeUp 0.7s ease 0.1s forwards;
       }
       .hero h1 {
         font-size: clamp(32px, 5vw, 48px);
         margin-bottom: 16px;
         color: #fff;
         text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        animation: heroFadeUp 0.7s ease 0.25s forwards;
       }
       .hero .uni {
         font-size: 15px;
         color: rgba(255, 255, 255, 0.82);
         margin-bottom: 22px;
+        opacity: 0;
+        animation: heroFadeUp 0.7s ease 0.4s forwards;
       }
       .hero .periode {
         display: inline-block;
@@ -227,6 +365,8 @@
         color: #fff;
         border: 1px solid rgba(255, 255, 255, 0.28);
         backdrop-filter: blur(4px);
+        opacity: 0;
+        animation: heroFadeUp 0.7s ease 0.55s forwards;
       }
       .hero-btns {
         margin-top: 36px;
@@ -234,6 +374,8 @@
         gap: 14px;
         justify-content: center;
         flex-wrap: wrap;
+        opacity: 0;
+        animation: heroFadeUp 0.7s ease 0.7s forwards;
       }
       .btn {
         padding: 13px 26px;
@@ -243,7 +385,16 @@
         cursor: pointer;
         transition:
           opacity 0.15s ease,
-          background 0.15s ease;
+          background 0.15s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+      }
+      .btn:active {
+        transform: translateY(-1px);
       }
       .btn-blue {
         background: var(--accent);
@@ -322,6 +473,15 @@
         text-align: center;
         border: 1px solid var(--line);
         background: var(--bg-soft);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+      .stat-box:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary);
+        box-shadow: 0 10px 22px rgba(62, 124, 177, 0.14);
       }
       .stat-box b {
         display: block;
@@ -407,8 +567,47 @@
       }
       .person:hover {
         border-color: var(--primary);
-        transform: translateY(-4px);
+        transform: translateY(-6px);
         box-shadow: 0 12px 24px rgba(62, 124, 177, 0.12);
+      }
+      .person:hover .avatar {
+        transform: scale(1.06);
+      }
+      .avatar {
+        transition: transform 0.3s ease;
+      }
+      .tim-grid.in .person {
+        animation: heroFadeUp 0.55s ease both;
+      }
+      .tim-grid.in .person:nth-child(1) {
+        animation-delay: 0.03s;
+      }
+      .tim-grid.in .person:nth-child(2) {
+        animation-delay: 0.08s;
+      }
+      .tim-grid.in .person:nth-child(3) {
+        animation-delay: 0.13s;
+      }
+      .tim-grid.in .person:nth-child(4) {
+        animation-delay: 0.18s;
+      }
+      .tim-grid.in .person:nth-child(5) {
+        animation-delay: 0.23s;
+      }
+      .tim-grid.in .person:nth-child(6) {
+        animation-delay: 0.28s;
+      }
+      .tim-grid.in .person:nth-child(7) {
+        animation-delay: 0.33s;
+      }
+      .tim-grid.in .person:nth-child(8) {
+        animation-delay: 0.38s;
+      }
+      .tim-grid.in .person:nth-child(9) {
+        animation-delay: 0.43s;
+      }
+      .tim-grid.in .person:nth-child(10) {
+        animation-delay: 0.48s;
       }
 
       .avatar img {
@@ -520,10 +719,36 @@
         border: 1px solid var(--line);
         border-radius: var(--radius);
         padding: 26px;
-        transition: border-color 0.15s ease;
+        transition:
+          border-color 0.15s ease,
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
       }
       .proker-card:hover {
         border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 14px 28px rgba(62, 124, 177, 0.14);
+      }
+      .proker-grid.in .proker-card {
+        animation: heroFadeUp 0.55s ease both;
+      }
+      .proker-grid.in .proker-card:nth-child(1) {
+        animation-delay: 0.03s;
+      }
+      .proker-grid.in .proker-card:nth-child(2) {
+        animation-delay: 0.09s;
+      }
+      .proker-grid.in .proker-card:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .proker-grid.in .proker-card:nth-child(4) {
+        animation-delay: 0.21s;
+      }
+      .proker-grid.in .proker-card:nth-child(5) {
+        animation-delay: 0.27s;
+      }
+      .proker-grid.in .proker-card:nth-child(6) {
+        animation-delay: 0.33s;
       }
       .cat-tag {
         display: inline-flex;
@@ -565,21 +790,173 @@
         background: var(--bg);
         overflow: hidden;
       }
+      .gal-grid .gal-photo {
+        cursor: pointer;
+        position: relative;
+      }
+      .gal-grid .gal-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(23, 41, 61, 0);
+        transition: background 0.25s ease;
+      }
+      .gal-grid .gal-photo:hover::after {
+        background: rgba(23, 41, 61, 0.15);
+      }
+      .gal-grid .gal-photo .zoom-hint {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.7);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--primary-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition:
+          opacity 0.2s ease,
+          transform 0.2s ease;
+        pointer-events: none;
+      }
+      .gal-grid .gal-photo:hover .zoom-hint {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .gal-grid .gal-photo .zoom-hint svg {
+        width: 16px;
+        height: 16px;
+      }
       .gal-grid div img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
+        transition: transform 0.4s ease;
+      }
+      .gal-grid .gal-photo:hover img {
+        transform: scale(1.08);
       }
       .gal-grid div:nth-child(1) {
         grid-column: span 2;
         grid-row: span 2;
+      }
+      .gal-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: 1.5px dashed var(--line) !important;
+        background: transparent !important;
+        color: var(--muted);
+      }
+      .gal-empty svg {
+        width: 22px;
+        height: 22px;
+        opacity: 0.55;
+      }
+      .gal-empty span {
+        font-size: 10.5px;
+        font-weight: 500;
+        opacity: 0.7;
+        text-align: center;
+        padding: 0 6px;
       }
       .yt-note {
         margin-top: 18px;
         font-size: 13px;
         color: var(--muted);
         text-align: center;
+      }
+
+      /* Lightbox galeri */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(16, 27, 40, 0.92);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 200;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 0.25s ease,
+          visibility 0.25s ease;
+        padding: 24px;
+      }
+      .lightbox.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .lightbox img {
+        max-width: min(880px, 90vw);
+        max-height: 82vh;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        transform: scale(0.96);
+        transition: transform 0.25s ease;
+      }
+      .lightbox.open img {
+        transform: scale(1);
+      }
+      .lightbox-close,
+      .lightbox-nav {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+      .lightbox-close:hover,
+      .lightbox-nav:hover {
+        background: rgba(255, 255, 255, 0.24);
+      }
+      .lightbox-close {
+        top: 20px;
+        right: 20px;
+      }
+      .lightbox-close svg,
+      .lightbox-nav svg {
+        width: 20px;
+        height: 20px;
+      }
+      .lightbox-nav.prev {
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .lightbox-nav.next {
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .lightbox-nav:hover {
+        transform: translateY(-50%) scale(1.08);
+      }
+      .lightbox-counter {
+        position: absolute;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0.03em;
       }
 
       /* Timeline */
@@ -611,6 +988,13 @@
         background: var(--primary);
         border: 3px solid var(--bg);
         box-shadow: 0 0 0 1px var(--line);
+      }
+      .t-item:hover .t-dot {
+        animation: pulseRing 1.1s ease-out infinite;
+      }
+      .t-item:not(:last-child)::before {
+        transform-origin: top;
+        animation: lineGrow 0.7s ease both;
       }
       .t-item h4 {
         font-size: 15px;
@@ -659,8 +1043,34 @@
 
       /* Kontak */
       #kontak {
-        background: var(--primary-dark);
+        position: relative;
+        background: linear-gradient(160deg, var(--primary-dark) 0%, #16324a 60%, #102436 100%);
         color: #fff;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      #kontak::before,
+      #kontak::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(50px);
+        z-index: -1;
+        opacity: 0.35;
+      }
+      #kontak::before {
+        width: 320px;
+        height: 320px;
+        background: var(--accent);
+        top: -120px;
+        right: -80px;
+      }
+      #kontak::after {
+        width: 260px;
+        height: 260px;
+        background: var(--primary);
+        bottom: -100px;
+        left: -60px;
       }
       #kontak h2,
       #kontak .kicker {
@@ -671,68 +1081,113 @@
       }
       .kontak-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 44px;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 30px;
+        align-items: stretch;
+      }
+      .kontak-panel {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: var(--radius);
+        padding: 32px;
+        backdrop-filter: blur(6px);
       }
       .kontak-item {
         display: flex;
-        gap: 14px;
-        margin-bottom: 16px;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 10px;
+        border-radius: 10px;
         font-size: 13.5px;
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+      }
+      .kontak-item:hover {
+        background: rgba(255, 255, 255, 0.06);
+        transform: translateX(4px);
+      }
+      .kontak-item + .kontak-item {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .kontak-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 11px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        color: var(--accent);
+        transition:
+          background 0.2s ease,
+          transform 0.25s ease;
+      }
+      .kontak-item:hover .kontak-icon {
+        background: var(--accent);
+        color: var(--primary-dark);
+        transform: scale(1.08) rotate(-4deg);
+      }
+      .kontak-icon svg {
+        width: 19px;
+        height: 19px;
       }
       .kontak-item b {
+        display: block;
         color: var(--accent);
-        min-width: 92px;
-        font-weight: 600;
+        font-size: 10.5px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 3px;
       }
       .kontak-item span {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.88);
+        font-weight: 500;
+      }
+      .kontak-social p {
+        opacity: 0.85;
+        margin-bottom: 18px;
+        font-size: 14px;
       }
       .social {
         display: flex;
+        flex-direction: column;
         gap: 10px;
-        margin-top: 16px;
-        flex-wrap: wrap;
       }
       .social a {
-        padding: 10px 18px;
-        border: 1.5px solid rgba(255, 255, 255, 0.28);
-        border-radius: 9px;
-        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 18px;
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        font-size: 13.5px;
         font-weight: 500;
-        transition: background 0.15s ease;
+        background: rgba(255, 255, 255, 0.04);
+        transition:
+          background 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .social a svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        color: var(--accent);
+        transition: transform 0.25s ease;
       }
       .social a:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--primary-dark);
+        transform: translateX(5px);
       }
-
-      /* Testimoni */
-      .testi-box {
-        max-width: 680px;
-        margin: 0 auto;
-        text-align: center;
-        background: var(--bg-soft);
-        border-radius: var(--radius);
-        padding: 44px 38px;
-        border: 1px solid var(--line);
-      }
-      .testi-box p {
-        font-size: 16px;
-        color: var(--ink);
-        font-style: italic;
-        margin-bottom: 18px;
-      }
-      .testi-box .who {
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--primary);
-      }
-      .testi-box .who span {
-        display: block;
-        font-weight: 400;
-        color: var(--muted);
-        font-size: 12px;
-        margin-top: 2px;
+      .social a:hover svg {
+        color: var(--primary-dark);
+        transform: scale(1.12);
       }
 
       footer {
@@ -821,6 +1276,7 @@
     </style>
   </head>
   <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
     <header>
       <div class="container">
         <div class="logo">
@@ -866,10 +1322,10 @@
             <p>Tema besar kelompok kami adalah <strong>"Inovasi Berbasis Potensi Lokal untuk Desa Mandiri dan Berkelanjutan"</strong> — fokus pada bidang pendidikan, kesehatan, lingkungan, ekonomi, dan sosial kemasyarakatan.</p>
           </div>
           <div class="stats">
-            <div class="stat-box"><b>11</b><span>Anggota Kelompok</span></div>
-            <div class="stat-box"><b>30</b><span>Hari Penugasan</span></div>
-            <div class="stat-box"><b>10</b><span>Program Kerja</span></div>
-            <div class="stat-box"><b>5</b><span>Bidang Fokus</span></div>
+            <div class="stat-box"><b data-count="11">0</b><span>Anggota Kelompok</span></div>
+            <div class="stat-box"><b data-count="30">0</b><span>Hari Penugasan</span></div>
+            <div class="stat-box"><b data-count="10">0</b><span>Program Kerja</span></div>
+            <div class="stat-box"><b data-count="5">0</b><span>Bidang Fokus</span></div>
           </div>
         </div>
       </div>
@@ -1049,17 +1505,76 @@
           <span class="kicker">Dokumentasi</span>
           <h2>Galeri Kegiatan</h2>
         </div>
-        <div class="gal-grid reveal">
-          <div><img src="img/kegiatan1.jpeg" alt="Tim KKN Desa Pamulihan 03" /></div>
-          <div><img src="img/kegiatan2.jpeg" alt="Kegiatan KKN Desa Pamulihan 03" /></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div class="gal-grid reveal" id="galGrid">
+          <div class="gal-photo" data-full="img/kegiatan1.jpeg" data-caption="Tim KKN Desa Pamulihan 03">
+            <img src="img/kegiatan1.jpeg" alt="Tim KKN Desa Pamulihan 03" />
+            <span class="zoom-hint"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+                <path d="M11 8v6M8 11h6" /></svg
+            ></span>
+          </div>
+          <div class="gal-photo" data-full="img/kegiatan2.jpeg" data-caption="Kegiatan KKN Desa Pamulihan 03">
+            <img src="img/kegiatan2.jpeg" alt="Kegiatan KKN Desa Pamulihan 03" />
+            <span class="zoom-hint"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+                <path d="M11 8v6M8 11h6" /></svg
+            ></span>
+          </div>
+          <div class="gal-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2.5" />
+              <circle cx="9" cy="11" r="2" />
+              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
+            </svg>
+            <span>Segera Hadir</span>
+          </div>
+          <div class="gal-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2.5" />
+              <circle cx="9" cy="11" r="2" />
+              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
+            </svg>
+            <span>Segera Hadir</span>
+          </div>
+          <div class="gal-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2.5" />
+              <circle cx="9" cy="11" r="2" />
+              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
+            </svg>
+            <span>Segera Hadir</span>
+          </div>
+          <div class="gal-empty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2.5" />
+              <circle cx="9" cy="11" r="2" />
+              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
+            </svg>
+            <span>Segera Hadir</span>
+          </div>
         </div>
         <p class="yt-note">Foto dokumentasi kegiatan akan ditambahkan seiring berjalannya program KKN.</p>
       </div>
     </section>
+
+    <!-- Lightbox galeri -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+      <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Sebelumnya">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+      </button>
+      <img id="lightboxImg" src="" alt="" />
+      <button class="lightbox-nav next" id="lightboxNext" aria-label="Berikutnya">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+      </button>
+      <span class="lightbox-counter" id="lightboxCounter"></span>
+    </div>
 
     <!-- 6. Timeline -->
     <section id="timeline">
@@ -1175,38 +1690,71 @@
           <h2>Kontak & Sosial Media</h2>
         </div>
         <div class="kontak-grid reveal">
-          <div>
-            <div class="kontak-item"><b>Alamat</b><span>Desa Pamulihan, Kecamatan Pamulihan, Kabupaten Sumedang</span></div>
-            <div class="kontak-item"><b>Koordinator</b><span>Muhammad Fauzan Kamali — 0852-9408-8565</span></div>
-            <div class="kontak-item"><b>Email</b><span>kknpamulihan03@gmail.com</span></div>
+          <div class="kontak-panel">
+            <div class="kontak-item">
+              <span class="kontak-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z" />
+                  <circle cx="12" cy="9.5" r="2.4" />
+                </svg>
+              </span>
+              <div><b>Alamat</b><span>Desa Pamulihan, Kecamatan Pamulihan, Kabupaten Sumedang</span></div>
+            </div>
+            <div class="kontak-item">
+              <span class="kontak-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M17.6 14.1c-.7-.4-1.7-.9-2.3-.6-.4.2-.7.8-1 1.1-.2.2-.4.3-.7.2-1-.4-2.2-1.3-3-2.4-.2-.3-.1-.5.1-.7.3-.3.7-.6.8-1 .1-.4-.1-1.3-.4-2-.2-.5-.4-.7-.7-.7-1.3 0-2.6 1.5-2.6 3 0 2 1.5 4.3 3.6 5.9 2 1.6 4.1 2.3 5.5 1.9.9-.3 1.6-1.4 1.6-2.4 0-.3-.1-.5-.5-.7Z"
+                  />
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+              </span>
+              <div><b>Koordinator</b><span>Muhammad Fauzan Kamali — 0852-9408-8565</span></div>
+            </div>
+            <div class="kontak-item">
+              <span class="kontak-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                  <path d="m3.5 6 8.5 6 8.5-6" />
+                </svg>
+              </span>
+              <div><b>Email</b><span>kknpamulihan03@gmail.com</span></div>
+            </div>
           </div>
-          <div>
-            <p style="opacity: 0.85; margin-bottom: 14px; font-size: 14px">Ikuti media sosial kami untuk update kegiatan terbaru.</p>
+          <div class="kontak-social">
+            <p>Ikuti media sosial kami untuk update kegiatan terbaru.</p>
             <div class="social">
-              <a href="https://www.instagram.com/kknpamulihan3?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">Instagram</a>
-              <a href="https://www.tiktok.com/@kknpamulihan3" target="_blank" rel="noopener">TikTok</a>
-              <a href="#">YouTube</a>
+              <a href="https://www.instagram.com/kknpamulihan3?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4.2" />
+                  <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none" />
+                </svg>
+                Instagram
+              </a>
+              <a href="https://www.tiktok.com/@kknpamulihan3" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 4v9.6a3.6 3.6 0 1 1-3.6-3.6" />
+                  <path d="M14 4c.3 2 1.8 3.5 4 3.8" />
+                </svg>
+                TikTok
+              </a>
+              <a href="#">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2.5" y="6" width="19" height="12" rx="3.5" />
+                  <path d="m10.5 9.5 5 2.5-5 2.5Z" fill="currentColor" stroke="none" />
+                </svg>
+                YouTube
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 9. Testimoni / Sambutan -->
-    <section id="testimoni">
-      <div class="container">
-        <div class="section-title reveal">
-          <span class="kicker">Sambutan</span>
-          <h2>Kata Mereka</h2>
-        </div>
-        <div class="testi-box reveal">
-          <p>"KALO ADA ISI"</p>
-          <div class="who">Bapak Kepala Desa<span>Desa Pamulihan</span></div>
-        </div>
-      </div>
-    </section>
-
     <footer>© 2026 KKN DESA PAMULIHAN 03 — Desa Pamulihan, Kecamatan Pamulihan, Kabupaten Sumedang</footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
 
     <script>
       const menuBtn = document.getElementById("menuBtn");
@@ -1231,6 +1779,97 @@
       } else {
         revealEls.forEach((el) => el.classList.add("in"));
       }
+
+      // Progress bar scroll
+      const progressBar = document.getElementById("scrollProgress");
+      const updateProgress = () => {
+        const h = document.documentElement;
+        const scrolled = h.scrollTop;
+        const height = h.scrollHeight - h.clientHeight;
+        progressBar.style.width = (height > 0 ? (scrolled / height) * 100 : 0) + "%";
+      };
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      // Tombol kembali ke atas
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener(
+        "scroll",
+        () => {
+          backToTop.classList.toggle("show", window.scrollY > 480);
+        },
+        { passive: true },
+      );
+      backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+      // Animasi hitung angka statistik saat terlihat
+      const counters = document.querySelectorAll(".stat-box b[data-count]");
+      if (counters.length && "IntersectionObserver" in window) {
+        const countIo = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              const el = entry.target;
+              const target = parseInt(el.dataset.count, 10);
+              const duration = 900;
+              const start = performance.now();
+              const step = (now) => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(eased * target);
+                if (progress < 1) requestAnimationFrame(step);
+              };
+              requestAnimationFrame(step);
+              countIo.unobserve(el);
+            });
+          },
+          { threshold: 0.4 },
+        );
+        counters.forEach((el) => countIo.observe(el));
+      } else {
+        counters.forEach((el) => (el.textContent = el.dataset.count));
+      }
+      // Lightbox galeri
+      const galPhotos = Array.from(document.querySelectorAll(".gal-photo"));
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxCounter = document.getElementById("lightboxCounter");
+      const lightboxClose = document.getElementById("lightboxClose");
+      const lightboxPrev = document.getElementById("lightboxPrev");
+      const lightboxNext = document.getElementById("lightboxNext");
+      let currentGalIndex = 0;
+
+      const openLightbox = (index) => {
+        currentGalIndex = index;
+        const photo = galPhotos[currentGalIndex];
+        lightboxImg.src = photo.dataset.full;
+        lightboxImg.alt = photo.dataset.caption || "";
+        lightboxCounter.textContent = `${currentGalIndex + 1} / ${galPhotos.length}`;
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      };
+      const closeLightbox = () => {
+        lightbox.classList.remove("open");
+        document.body.style.overflow = "";
+      };
+      const showNext = () => openLightbox((currentGalIndex + 1) % galPhotos.length);
+      const showPrev = () => openLightbox((currentGalIndex - 1 + galPhotos.length) % galPhotos.length);
+
+      galPhotos.forEach((photo, index) => {
+        photo.addEventListener("click", () => openLightbox(index));
+      });
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxNext.addEventListener("click", showNext);
+      lightboxPrev.addEventListener("click", showPrev);
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
+      });
     </script>
   </body>
 </html>
