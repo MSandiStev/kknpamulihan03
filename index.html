@@ -920,10 +920,6 @@
       .gal-grid .gal-photo:hover img {
         transform: scale(1.08);
       }
-      .gal-grid div:nth-child(1) {
-        grid-column: span 2;
-        grid-row: span 2;
-      }
       .gal-empty {
         display: flex;
         flex-direction: column;
@@ -1124,6 +1120,15 @@
       }
       .timeline.in .t-item:nth-child(13) {
         transition-delay: 0.63s;
+      }
+      .timeline.in .t-item:nth-child(14) {
+        transition-delay: 0.68s;
+      }
+      .timeline.in .t-item:nth-child(15) {
+        transition-delay: 0.73s;
+      }
+      .timeline.in .t-item:nth-child(16) {
+        transition-delay: 0.78s;
       }
       .t-item:not(:last-child)::before {
         content: "";
@@ -1412,10 +1417,6 @@
         .gal-grid {
           grid-template-columns: 1fr;
         }
-        .gal-grid div:nth-child(1) {
-          grid-column: span 1;
-          grid-row: span 1;
-        }
         .stats {
           grid-template-columns: 1fr;
         }
@@ -1458,7 +1459,7 @@
     <div class="hero" id="heroSection">
       <div class="container">
         <span class="eyebrow">Kuliah Kerja Nyata 2026</span>
-        <h1>KKN Desa Pamulihan 03</h1>
+        <h1>KKN Desa Pamulihan 3</h1>
         <p class="uni">Universitas Muhammadiyah Bandung</p>
         <span class="periode">Periode Agustus – September 2026</span>
         <div class="hero-btns">
@@ -1703,29 +1704,53 @@
                 <path d="M11 8v6M8 11h6" /></svg
             ></span>
           </div>
-          <div class="gal-empty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="5" width="18" height="14" rx="2.5" />
-              <circle cx="9" cy="11" r="2" />
-              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
-            </svg>
-            <span>Segera Hadir</span>
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan4.jpeg"
+            data-caption="Koordinasi Program Perayaan HUT Kemerdekaan RI — Melakukan pertemuan bersama Karang Taruna untuk membahas rencana kegiatan, teknis pelaksanaan, serta pembagian tugas dalam perayaan HUT Kemerdekaan RI di Desa Pamulihan"
+          >
+            <img src="img/kegiatan4.jpeg" alt="Koordinasi Program Perayaan HUT Kemerdekaan RI" />
+            <span class="gal-caption"
+              ><b>Koordinasi Program Perayaan HUT Kemerdekaan RI</b><span>Melakukan pertemuan bersama Karang Taruna untuk membahas rencana kegiatan, teknis pelaksanaan, serta pembagian tugas dalam perayaan HUT Kemerdekaan RI.</span></span
+            >
+            <span class="zoom-hint"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+                <path d="M11 8v6M8 11h6" /></svg
+            ></span>
           </div>
-          <div class="gal-empty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="5" width="18" height="14" rx="2.5" />
-              <circle cx="9" cy="11" r="2" />
-              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
-            </svg>
-            <span>Segera Hadir</span>
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan5.jpeg"
+            data-caption="Kunjungan dan Koordinasi Sekolah, Madrasah, dan Kantor Desa Pamulihan — Melakukan kunjungan ke sekolah untuk membahas rencana pelaksanaan Program Lentera, silaturahmi ke madrasah membahas kegiatan mengaji, serta mengikuti sosialisasi Sadajabar di Kantor Desa Pamulihan"
+          >
+            <img src="img/kegiatan5.jpeg" alt="Kunjungan dan Koordinasi Sekolah, Madrasah, dan Kantor Desa Pamulihan" />
+            <span class="gal-caption"
+              ><b>Kunjungan Sekolah, Madrasah & Kantor Desa</b><span>Membahas rencana Program Lentera, silaturahmi ke madrasah soal kegiatan mengaji, serta mengikuti sosialisasi Sadajabar di Kantor Desa Pamulihan.</span></span
+            >
+            <span class="zoom-hint"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+                <path d="M11 8v6M8 11h6" /></svg
+            ></span>
           </div>
-          <div class="gal-empty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="5" width="18" height="14" rx="2.5" />
-              <circle cx="9" cy="11" r="2" />
-              <path d="m21 16-5-4-4 3.5-3-2.5-6 4" />
-            </svg>
-            <span>Segera Hadir</span>
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan6.jpeg"
+            data-caption="Kegiatan Kesehatan, Persiapan Program Kerja, dan Pengajian Desa Pamulihan — Mengikuti kegiatan Prolanis Segar Mandiri bersama Puskesmas Pamulihan pada pagi hari, dilanjutkan persiapan program kerja reflektor jalan, dan pengajian bersama warga pada malam hari"
+          >
+            <img src="img/kegiatan6.jpeg" alt="Kegiatan Kesehatan, Persiapan Program Kerja, dan Pengajian Desa Pamulihan" />
+            <span class="gal-caption"
+              ><b>Kesehatan, Persiapan Proker & Pengajian Desa</b><span>Mengikuti kegiatan Prolanis Segar Mandiri bersama Puskesmas Pamulihan, persiapan program kerja reflektor jalan, dan pengajian bersama warga desa.</span></span
+            >
+            <span class="zoom-hint"
+              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+                <path d="M11 8v6M8 11h6" /></svg
+            ></span>
           </div>
         </div>
         <p class="yt-note">Foto dokumentasi kegiatan akan ditambahkan seiring berjalannya program KKN.</p>
@@ -1778,6 +1803,30 @@
             <div class="t-dot"></div>
             <div>
               <span class="date">Hari 3</span>
+              <h4>Diskusi dengan Ibu Majelis</h4>
+              <p>Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">Hari 4</span>
+              <h4>Diskusi dengan Ibu Majelis</h4>
+              <p>Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">Hari 5</span>
+              <h4>Diskusi dengan Ibu Majelis</h4>
+              <p>Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot"></div>
+            <div>
+              <span class="date">Hari 6</span>
               <h4>Diskusi dengan Ibu Majelis</h4>
               <p>Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan.</p>
             </div>
