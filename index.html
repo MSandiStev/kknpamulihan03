@@ -877,7 +877,7 @@
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
       }
-      .gal-grid .gal-photo .zoom-hint svg {
+      .gal-grid .gal-photo:hover .zoom-hint svg {
         width: 16px;
         height: 16px;
       }
@@ -920,34 +920,6 @@
       .gal-grid .gal-photo:hover img {
         transform: scale(1.08);
       }
-      .gal-empty {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        border: 1.5px dashed var(--line) !important;
-        background: transparent !important;
-        color: var(--muted);
-      }
-      .gal-empty svg {
-        width: 22px;
-        height: 22px;
-        opacity: 0.55;
-      }
-      .gal-empty span {
-        font-size: 10.5px;
-        font-weight: 500;
-        opacity: 0.7;
-        text-align: center;
-        padding: 0 6px;
-      }
-      .yt-note {
-        margin-top: 18px;
-        font-size: 13px;
-        color: var(--muted);
-        text-align: center;
-      }
 
       /* Lightbox galeri */
       .lightbox {
@@ -971,7 +943,7 @@
       }
       .lightbox img {
         max-width: min(880px, 90vw);
-        max-height: 82vh;
+        max-height: 70vh;
         border-radius: 12px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         transform: scale(0.96);
@@ -1667,138 +1639,151 @@
           <h2>Galeri Kegiatan</h2>
         </div>
         <div class="gal-grid reveal" id="galGrid">
-          <div class="gal-photo" data-full="img/kegiatan1.jpeg" data-caption="Konfirmasi Kehadiran Ke Desa — Konfirmasi kehadiran kelompok KKN ke desa serta arahan dari pihak desa">
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan1.jpeg"
+            data-title="Konfirmasi Kehadiran Ke Desa"
+            data-short="Konfirmasi kehadiran kelompok KKN ke desa."
+            data-desc="Konfirmasi kehadiran kelompok KKN ke desa serta arahan dari pihak desa."
+          >
             <img src="img/kegiatan1.jpeg" alt="Konfirmasi Kehadiran Ke Desa" />
-            <span class="gal-caption"><b>Konfirmasi Kehadiran Ke Desa</b><span>Konfirmasi kehadiran kelompok KKN ke desa serta arahan dari pihak desa.</span></span>
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Konfirmasi Kehadiran Ke Desa</b><span>Konfirmasi kehadiran kelompok KKN ke desa.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
           <div
             class="gal-photo"
             data-full="img/kegiatan2.jpeg"
-            data-caption="Menghadiri Musyawarah Agenda Kegiatan Desa Pamulihan — Mengikuti musyawarah bersama Pemerintah Desa Pamulihan untuk mengetahui agenda kegiatan desa serta melakukan koordinasi awal pelaksanaan program KKN"
+            data-title="Musyawarah Agenda Kegiatan Desa"
+            data-short="Mengikuti musyawarah bersama Pemerintah Desa Pamulihan."
+            data-desc="Mengikuti musyawarah bersama Pemerintah Desa Pamulihan untuk mengetahui agenda kegiatan desa serta melakukan koordinasi awal pelaksanaan program KKN."
           >
             <img src="img/kegiatan2.jpeg" alt="Menghadiri Musyawarah Agenda Kegiatan Desa Pamulihan" />
-            <span class="gal-caption"><b>Musyawarah Agenda Kegiatan Desa</b><span>Mengikuti musyawarah bersama Pemerintah Desa Pamulihan untuk mengetahui agenda kegiatan desa serta koordinasi awal pelaksanaan program KKN.</span></span>
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Musyawarah Agenda Kegiatan Desa</b><span>Mengikuti musyawarah bersama Pemerintah Desa Pamulihan.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
           <div
             class="gal-photo"
             data-full="img/kegiatan3.jpeg"
-            data-caption="Diskusi dengan Ibu Majelis — Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan"
+            data-title="Diskusi dengan Ibu Majelis"
+            data-short="Melakukan diskusi bersama Ibu Majelis."
+            data-desc="Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan."
           >
             <img src="img/kegiatan3.jpeg" alt="Diskusi dengan Ibu Majelis" />
-            <span class="gal-caption"
-              ><b>Diskusi dengan Ibu Majelis</b><span>Melakukan diskusi bersama Ibu Majelis untuk membahas berbagai kegiatan yang berkaitan dengan peran dan aktivitas majelis di lingkungan Desa Pamulihan.</span></span
-            >
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Diskusi dengan Ibu Majelis</b><span>Melakukan diskusi bersama Ibu Majelis.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
           <div
             class="gal-photo"
             data-full="img/kegiatan4.jpeg"
-            data-caption="Koordinasi Program Perayaan HUT Kemerdekaan RI — Melakukan pertemuan bersama Karang Taruna untuk membahas rencana kegiatan, teknis pelaksanaan, serta pembagian tugas dalam perayaan HUT Kemerdekaan RI di Desa Pamulihan"
+            data-title="Koordinasi Program Perayaan HUT RI"
+            data-short="Pertemuan bersama Karang Taruna."
+            data-desc="Melakukan pertemuan bersama Karang Taruna untuk membahas rencana kegiatan, teknis pelaksanaan, serta pembagian tugas dalam perayaan HUT Kemerdekaan RI di Desa Pamulihan."
           >
             <img src="img/kegiatan4.jpeg" alt="Koordinasi Program Perayaan HUT Kemerdekaan RI" />
-            <span class="gal-caption"
-              ><b>Koordinasi Program Perayaan HUT Kemerdekaan RI</b><span>Melakukan pertemuan bersama Karang Taruna untuk membahas rencana kegiatan, teknis pelaksanaan, serta pembagian tugas dalam perayaan HUT Kemerdekaan RI.</span></span
-            >
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Koordinasi Perayaan HUT RI</b><span>Pertemuan bersama Karang Taruna membahas kegiatan.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
           <div
             class="gal-photo"
             data-full="img/kegiatan5.jpeg"
-            data-caption="Kunjungan dan Koordinasi Sekolah, Madrasah, dan Kantor Desa Pamulihan — Melakukan kunjungan ke sekolah untuk membahas rencana pelaksanaan Program Lentera, silaturahmi ke madrasah membahas kegiatan mengaji, serta mengikuti sosialisasi Sadajabar di Kantor Desa Pamulihan"
+            data-title="Kunjungan Sekolah & Kantor Desa"
+            data-short="Membahas rencana Program Lentera dan silaturahmi."
+            data-desc="Membahas rencana Program Lentera, silaturahmi ke madrasah soal kegiatan mengaji, serta mengikuti sosialisasi Sadajabar di Kantor Desa Pamulihan."
           >
             <img src="img/kegiatan5.jpeg" alt="Kunjungan dan Koordinasi Sekolah, Madrasah, dan Kantor Desa Pamulihan" />
-            <span class="gal-caption"
-              ><b>Kunjungan Sekolah, Madrasah & Kantor Desa</b><span>Membahas rencana Program Lentera, silaturahmi ke madrasah soal kegiatan mengaji, serta mengikuti sosialisasi Sadajabar di Kantor Desa Pamulihan.</span></span
-            >
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Kunjungan Sekolah & Kantor Desa</b><span>Membahas rencana Program Lentera & silaturahmi.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
           <div
             class="gal-photo"
             data-full="img/kegiatan6.jpeg"
-            data-caption="Kegiatan Kesehatan, Persiapan Program Kerja, dan Pengajian Desa Pamulihan — Mengikuti kegiatan Prolanis Segar Mandiri bersama Puskesmas Pamulihan pada pagi hari, dilanjutkan persiapan program kerja reflektor jalan, dan pengajian bersama warga pada malam hari"
+            data-title="Kesehatan, Persiapan Proker & Pengajian"
+            data-short="Mengikuti kegiatan Prolanis bersama Puskesmas."
+            data-desc="Mengikuti kegiatan Prolanis Segar Mandiri bersama Puskesmas Pamulihan pada pagi hari, dilanjutkan persiapan program kerja reflektor jalan, dan pengajian bersama warga pada malam hari."
           >
             <img src="img/kegiatan6.jpeg" alt="Kegiatan Kesehatan, Persiapan Program Kerja, dan Pengajian Desa Pamulihan" />
-            <span class="gal-caption"
-              ><b>Kesehatan, Persiapan Proker & Pengajian Desa</b><span>Mengikuti kegiatan Prolanis Segar Mandiri bersama Puskesmas Pamulihan, persiapan program kerja reflektor jalan, dan pengajian bersama warga desa.</span></span
-            >
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Kesehatan, Persiapan Proker & Pengajian</b><span>Mengikuti kegiatan Prolanis bersama Puskesmas.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
-
-          <!-- KEGIATAN 7 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan7.jpeg"
-            data-caption="Kegiatan Mengajar di RA dan MI Al-Baats — Melaksanakan kegiatan mengajar di RA Al-Baats pada pagi hari, kemudian dilanjutkan dengan kegiatan mengajar ngaji bersama siswa-siswi MI Al-Baats sebagai bentuk partisipasi mahasiswa KKN dalam kegiatan pendidikan dan keagamaan"
+            data-title="Kegiatan Mengajar di RA dan MI Al-Baats"
+            data-short="Mengajar di RA dan MI Al-Baats."
+            data-desc="Melaksanakan kegiatan mengajar di RA Al-Baats pada pagi hari, kemudian dilanjutkan dengan kegiatan mengajar ngaji bersama siswa-siswi MI Al-Baats sebagai bentuk partisipasi mahasiswa KKN."
           >
             <img src="img/kegiatan7.jpeg" alt="Kegiatan Mengajar di RA dan MI Al-Baats" />
-            <span class="gal-caption"><b>Kegiatan Mengajar di RA dan MI Al-Baats</b><span>Mengajar di RA Al-Baats pada pagi hari, dilanjutkan mengajar ngaji bersama siswa-siswi MI Al-Baats.</span></span>
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Mengajar di RA dan MI Al-Baats</b><span>Mengajar di RA dan MI Al-Baats.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
-
-          <!-- KEGIATAN 8 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan8.jpeg"
-            data-caption="Hari Terakhir Mengajar di RA dan MI Al-Baats — Melaksanakan kegiatan mengajar di RA Al-Baats dan mengajar ngaji di MI Al-Baats sebagai hari terakhir pelaksanaan kegiatan mengajar bersama siswa-siswi Al-Baats"
+            data-title="Hari Terakhir Mengajar Al-Baats"
+            data-short="Hari terakhir kegiatan mengajar bersama siswa Al-Baats."
+            data-desc="Melaksanakan kegiatan mengajar di RA Al-Baats dan mengajar ngaji di MI Al-Baats sebagai hari terakhir pelaksanaan kegiatan mengajar bersama siswa-siswi Al-Baats."
           >
             <img src="img/kegiatan8.jpeg" alt="Hari Terakhir Mengajar di RA dan MI Al-Baats" />
-            <span class="gal-caption"><b>Hari Terakhir Mengajar di RA dan MI Al-Baats</b><span>Mengajar di RA Al-Baats dan mengajar ngaji di MI Al-Baats, menandai hari terakhir kegiatan mengajar bersama siswa-siswi Al-Baats.</span></span>
-            <span class="zoom-hint"
-              ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <span class="gal-caption"><b>Hari Terakhir Mengajar Al-Baats</b><span>Hari terakhir kegiatan mengajar bersama siswa Al-Baats.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.3-4.3" />
-                <path d="M11 8v6M8 11h6" /></svg
-            ></span>
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
           </div>
-
-          <!-- KEGIATAN 9 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan9.jpeg"
-            data-caption="Persiapan dan Koordinasi Perayaan HUT Kemerdekaan RI — Melakukan persiapan kegiatan perlombaan 17 Agustus bersama warga Desa Pamulihan pada siang hari. Pada malam hari, dilanjutkan dengan rapat bersama Taruna Karya untuk membahas persiapan, teknis pelaksanaan, dan koordinasi kegiatan perayaan HUT Kemerdekaan RI"
+            data-title="Persiapan & Koordinasi Perayaan HUT RI"
+            data-short="Persiapan perlombaan dan rapat bersama Taruna Karya."
+            data-desc="Melakukan persiapan kegiatan perlombaan 17 Agustus bersama warga Desa Pamulihan pada siang hari. Pada malam hari, dilanjutkan dengan rapat bersama Taruna Karya."
           >
             <img src="img/kegiatan9.jpeg" alt="Persiapan dan Koordinasi Perayaan HUT Kemerdekaan RI" />
-            <span class="gal-caption">
-              <b>Persiapan dan Koordinasi Perayaan HUT Kemerdekaan RI</b>
-              <span>Melakukan persiapan kegiatan perlombaan 17 Agustus bersama warga Desa Pamulihan pada siang hari. Pada malam hari, dilanjutkan dengan rapat bersama Taruna Karya.</span>
-            </span>
+            <span class="gal-caption"><b>Persiapan & Koordinasi HUT RI</b><span>Persiapan perlombaan dan rapat bersama Taruna Karya.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1807,18 +1792,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 10 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan10.jpeg"
-            data-caption="Partisipasi Kegiatan Perayaan HUT Kemerdekaan RI — Mengikuti kegiatan jalan santai bersama warga Desa Pamulihan pada pagi hari. Pada siang hari, turut berpartisipasi dalam berbagai perlombaan 17 Agustus bersama masyarakat sebagai bentuk partisipasi dan kebersamaan dalam memeriahkan HUT Kemerdekaan RI"
+            data-title="Partisipasi Perayaan HUT Kemerdekaan RI"
+            data-short="Jalan santai dan berbagai perlombaan."
+            data-desc="Mengikuti kegiatan jalan santai bersama warga Desa Pamulihan pada pagi hari. Pada siang hari, turut berpartisipasi dalam berbagai perlombaan 17 Agustus bersama masyarakat."
           >
             <img src="img/kegiatan10.jpeg" alt="Partisipasi Kegiatan Perayaan HUT Kemerdekaan RI" />
-            <span class="gal-caption"
-              ><b>Partisipasi Kegiatan Perayaan HUT Kemerdekaan RI</b
-              ><span>Mengikuti kegiatan jalan santai bersama warga Desa Pamulihan pada pagi hari. Pada siang hari, turut berpartisipasi dalam berbagai perlombaan 17 Agustus.</span></span
-            >
+            <span class="gal-caption"><b>Partisipasi HUT Kemerdekaan RI</b><span>Jalan santai dan berbagai perlombaan.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1827,15 +1809,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 11 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan11.jpeg"
-            data-caption="Kegiatan Kebersihan, Kemasyarakatan, dan Persiapan Program KKN — Melaksanakan kegiatan Minggu Bersih bersama warga Desa Pamulihan pada pagi hari. Siang hari dilanjutkan dengan berpartisipasi dalam perlombaan 17 Agustus serta berdiskusi bersama Kepala Dusun terkait kegiatan. Pada sore hari, melakukan persiapan Program Lentera bersama anggota kelompok KKN"
+            data-title="Kebersihan & Persiapan Program KKN"
+            data-short="Minggu Bersih dan persiapan Program Lentera."
+            data-desc="Melaksanakan kegiatan Minggu Bersih bersama warga Desa Pamulihan pada pagi hari dan persiapan Program Lentera."
           >
             <img src="img/kegiatan11.jpeg" alt="Kegiatan Kebersihan, Kemasyarakatan, dan Persiapan Program KKN" />
-            <span class="gal-caption"><b>Kegiatan Kebersihan, Kemasyarakatan, dan Persiapan Program KKN</b><span>Melaksanakan kegiatan Minggu Bersih bersama warga Desa Pamulihan pada pagi hari dan persiapan Program Lentera.</span></span>
+            <span class="gal-caption"><b>Kebersihan & Persiapan Program KKN</b><span>Minggu Bersih dan persiapan Program Lentera.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1844,15 +1826,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 12 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan12.jpeg"
-            data-caption="Partisipasi Perayaan HUT Kemerdekaan RI — Mengikuti upacara peringatan HUT Kemerdekaan RI pada pagi hari bersama warga Desa Pamulihan. Pada siang hari, turut berpartisipasi dalam kegiatan perlombaan 17 Agustus sebagai bentuk partisipasi dan kebersamaan bersama masyarakat"
+            data-title="Upacara HUT Kemerdekaan RI"
+            data-short="Mengikuti upacara bersama warga desa."
+            data-desc="Mengikuti upacara peringatan HUT Kemerdekaan RI pada pagi hari bersama warga Desa Pamulihan dan berpartisipasi dalam kegiatan perlombaan."
           >
             <img src="img/kegiatan12.jpeg" alt="Partisipasi Perayaan HUT Kemerdekaan RI" />
-            <span class="gal-caption"><b>Partisipasi Perayaan HUT Kemerdekaan RI</b><span>Mengikuti upacara peringatan HUT Kemerdekaan RI pada pagi hari bersama warga Desa Pamulihan.</span></span>
+            <span class="gal-caption"><b>Upacara HUT Kemerdekaan RI</b><span>Mengikuti upacara bersama warga desa.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1861,15 +1843,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 13 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan13.jpeg"
-            data-caption="Persiapan Program Lentera dan Koordinasi Pemasangan Reflektor — Melakukan persiapan Program Lentera pada pagi hari. Pada sore hari, melakukan diskusi bersama Ketua RW terkait perizinan dan rencana pemasangan reflektor jalan di lingkungan Desa Pamulihan"
+            data-title="Persiapan Lentera & Reflektor Jalan"
+            data-short="Persiapan Program Lentera dan diskusi bersama Ketua RW."
+            data-desc="Melakukan persiapan Program Lentera pada pagi hari. Pada sore hari, melakukan diskusi bersama Ketua RW terkait perizinan dan rencana pemasangan reflektor jalan."
           >
             <img src="img/kegiatan13.jpeg" alt="Persiapan Program Lentera dan Koordinasi Pemasangan Reflektor" />
-            <span class="gal-caption"><b>Persiapan Program Lentera & Reflektor</b><span>Melakukan persiapan Program Lentera pada pagi hari serta berdiskusi bersama Ketua RW.</span></span>
+            <span class="gal-caption"><b>Persiapan Lentera & Reflektor Jalan</b><span>Persiapan Program Lentera dan diskusi bersama Ketua RW.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1878,15 +1860,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 14 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan14.jpeg"
-            data-caption="Kegiatan Posyandu dan Persiapan Program Kerja — Mengikuti kegiatan Posyandu bersama masyarakat Desa Pamulihan pada pagi hari. Setelah itu, melanjutkan pengerjaan program kerja berupa pembuatan reflektor jalan dan papan edukasi waktu urai sampah."
+            data-title="Kegiatan Posyandu & Pengerjaan Proker"
+            data-short="Mengikuti Posyandu dan pembuatan reflektor."
+            data-desc="Mengikuti kegiatan Posyandu bersama masyarakat Desa Pamulihan pada pagi hari. Setelah itu, melanjutkan pengerjaan program kerja berupa pembuatan reflektor jalan dan papan edukasi."
           >
             <img src="img/kegiatan14.jpeg" alt="Kegiatan Posyandu dan Persiapan Program Kerja" />
-            <span class="gal-caption"><b>Kegiatan Posyandu & Proker</b><span>Mengikuti kegiatan Posyandu bersama masyarakat Desa Pamulihan pada pagi hari.</span></span>
+            <span class="gal-caption"><b>Posyandu & Pengerjaan Proker</b><span>Mengikuti Posyandu dan pembuatan reflektor.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1895,15 +1877,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 15 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan15.jpeg"
-            data-caption="Briefing Program Lentera dan Koordinasi Pemasangan Reflektor — Melakukan briefing bersama anggota kelompok untuk mempersiapkan pelaksanaan Program Lentera. Pada sore hari, berdiskusi bersama Ketua RT terkait rencana dan teknis pemasangan reflektor jalan di lingkungan desa"
+            data-title="Briefing Lentera & Koordinasi RT"
+            data-short="Briefing kelompok dan diskusi dengan Ketua RT."
+            data-desc="Melakukan briefing bersama anggota kelompok untuk mempersiapkan pelaksanaan Program Lentera. Pada sore hari, berdiskusi bersama Ketua RT terkait rencana dan teknis pemasangan reflektor jalan."
           >
             <img src="img/kegiatan15.jpeg" alt="Briefing Program Lentera dan Koordinasi Pemasangan Reflektor" />
-            <span class="gal-caption"><b>Briefing Program Lentera & Reflektor</b><span>Melakukan briefing bersama anggota kelompok untuk mempersiapkan pelaksanaan Program Lentera.</span></span>
+            <span class="gal-caption"><b>Briefing Lentera & Koordinasi RT</b><span>Briefing kelompok dan diskusi dengan Ketua RT.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1912,18 +1894,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 16 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan16.jpeg"
-            data-caption="Program Lentera, Kunjungan Sekolah, dan Pemasangan Reflektor Jalan — Melaksanakan Program Lentera (Literasi, Edukasi, dan Karakter) berupa kegiatan prakarya bersama siswa kelas 3 MI Al-Baats dengan tema “Mengubah Sampah Menjadi Karya”, yaitu memanfaatkan plastik bekas untuk ditempel pada gambar. Setelah kegiatan Lentera, melakukan kunjungan ke MTsN 6 Sumedang untuk meminta izin pelaksanaan program kerja edukasi literasi keuangan sejak dini. Siang hari dilanjutkan dengan latihan menari untuk persiapan penampilan HUT RI. Pada sore hari, melakukan pemasangan reflektor jalan dengan dibantu oleh warga sekitar"
+            data-title="Program Lentera & Pemasangan Reflektor"
+            data-short="Prakarya bersama siswa MI Al-Baats."
+            data-desc="Melaksanakan Program Lentera (Literasi, Edukasi, dan Karakter) berupa prakarya bersama siswa kelas 3 MI Al-Baats dengan tema “Mengubah Sampah Menjadi Karya”, serta pemasangan reflektor jalan."
           >
             <img src="img/kegiatan16.jpeg" alt="Program Lentera, Kunjungan Sekolah, dan Pemasangan Reflektor Jalan" />
-            <span class="gal-caption"
-              ><b>Program Lentera, Kunjungan Sekolah, dan Pemasangan Reflektor Jalan</b
-              ><span>Melaksanakan Program Lentera (Literasi, Edukasi, dan Karakter) berupa kegiatan prakarya bersama siswa kelas 3 MI Al-Baats dengan tema “Mengubah Sampah Menjadi Karya”.</span></span
-            >
+            <span class="gal-caption"><b>Program Lentera & Reflektor</b><span>Prakarya bersama siswa MI Al-Baats.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1932,15 +1911,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 17 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan17.jpeg"
-            data-caption="Pemasangan Reflektor Jalan dan Plang Sampah — Melakukan pemasangan reflektor jalan di titik rawan serta pemasangan papan edukasi waktu urai sampah di lingkungan Desa Pamulihan bersama warga"
+            data-title="Pemasangan Reflektor & Plang Sampah"
+            data-short="Pemasangan di titik rawan dan lingkungan desa."
+            data-desc="Melakukan pemasangan reflektor jalan di titik rawan serta pemasangan papan edukasi waktu urai sampah di lingkungan Desa Pamulihan bersama warga."
           >
             <img src="img/kegiatan17.jpeg" alt="Pemasangan Reflektor Jalan dan Plang Sampah" />
-            <span class="gal-caption"><b>Pemasangan Reflektor & Plang Sampah</b><span>Pemasangan reflektor jalan di titik rawan serta papan edukasi waktu urai sampah bersama warga.</span></span>
+            <span class="gal-caption"><b>Pemasangan Reflektor & Plang Sampah</b><span>Pemasangan di titik rawan dan lingkungan desa.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1949,11 +1928,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 18 -->
-          <div class="gal-photo" data-full="img/kegiatan18.jpeg" data-caption="Seminar Keuangan Syariah — Menyelenggarakan seminar edukasi pengelolaan keuangan syariah dan perencanaan keuangan sejak dini bagi warga dan remaja desa">
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan18.jpeg"
+            data-title="Seminar Keuangan Syariah"
+            data-short="Edukasi pengelolaan keuangan bagi warga dan remaja."
+            data-desc="Menyelenggarakan seminar edukasi pengelolaan keuangan syariah dan perencanaan keuangan sejak dini bagi warga dan remaja desa."
+          >
             <img src="img/kegiatan18.jpeg" alt="Seminar Keuangan Syariah" />
-            <span class="gal-caption"><b>Seminar Keuangan Syariah</b><span>Menyelenggarakan seminar edukasi pengelolaan keuangan syariah dan perencanaan keuangan sejak dini.</span></span>
+            <span class="gal-caption"><b>Seminar Keuangan Syariah</b><span>Edukasi pengelolaan keuangan bagi warga dan remaja.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1962,11 +1945,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 19 -->
-          <div class="gal-photo" data-full="img/kegiatan19.jpeg" data-caption="Program Langkah Al-Qur'an — Melaksanakan kegiatan pembelajaran dan peningkatan kefasihan bacaan Al-Qur'an bersama anak-anak di desa">
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan19.jpeg"
+            data-title="Program Langkah Al-Qur'an"
+            data-short="Pembelajaran dan peningkatan kefasihan bacaan Al-Qur'an."
+            data-desc="Melaksanakan kegiatan pembelajaran dan peningkatan kefasihan bacaan Al-Qur'an bersama anak-anak di desa."
+          >
             <img src="img/kegiatan19.jpeg" alt="Program Langkah Al-Qur'an" />
-            <span class="gal-caption"><b>Program Langkah Al-Qur'an</b><span>Kegiatan pembelajaran dan peningkatan kefasihan bacaan Al-Qur'an bersama anak-anak di desa.</span></span>
+            <span class="gal-caption"><b>Program Langkah Al-Qur'an</b><span>Pembelajaran dan peningkatan kefasihan bacaan Al-Qur'an.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1975,11 +1962,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 20 -->
-          <div class="gal-photo" data-full="img/kegiatan20.jpeg" data-caption="Jumat Bersih (Jumsih) — Melaksanakan kerja bakti membersihkan lingkungan fasilitas umum dan sekitar desa bersama warga setempat">
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan20.jpeg"
+            data-title="Jumat Bersih (Jumsih)"
+            data-short="Kerja bakti membersihkan lingkungan fasilitas umum."
+            data-desc="Melaksanakan kerja bakti membersihkan lingkungan fasilitas umum dan sekitar desa bersama warga setempat."
+          >
             <img src="img/kegiatan20.jpeg" alt="Jumat Bersih (Jumsih)" />
-            <span class="gal-caption"><b>Jumat Bersih (Jumsih)</b><span>Melaksanakan kerja bakti membersihkan lingkungan fasilitas umum bersama warga setempat.</span></span>
+            <span class="gal-caption"><b>Jumat Bersih (Jumsih)</b><span>Kerja bakti membersihkan lingkungan fasilitas umum.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -1988,11 +1979,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 21 -->
-          <div class="gal-photo" data-full="img/kegiatan21.jpeg" data-caption="Pelayanan Posyandu dan Kesehatan — Berpartisipasi aktif membantu pelaksanaan kegiatan Posyandu dan penyuluhan kesehatan bersama kader desa">
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan21.jpeg"
+            data-title="Pelayanan Posyandu & Kesehatan"
+            data-short="Membantu pelaksanaan Posyandu dan penyuluhan."
+            data-desc="Berpartisipasi aktif membantu pelaksanaan kegiatan Posyandu dan penyuluhan kesehatan bersama kader desa."
+          >
             <img src="img/kegiatan21.jpeg" alt="Pelayanan Posyandu dan Kesehatan" />
-            <span class="gal-caption"><b>Pelayanan Posyandu & Kesehatan</b><span>Berpartisipasi aktif membantu pelaksanaan kegiatan Posyandu dan penyuluhan kesehatan.</span></span>
+            <span class="gal-caption"><b>Pelayanan Posyandu & Kesehatan</b><span>Membantu pelaksanaan Posyandu dan penyuluhan.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2001,21 +1996,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 22 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan22.jpeg"
-            data-caption="Digitalisasi UMKM dan Latihan Penampilan HUT RI — Melakukan kunjungan ke pelaku UMKM di Desa Pamulihan dalam rangka program digitalisasi UMKM dengan membantu mempromosikan produk melalui media sosial. Pada sore hari, dilanjutkan dengan latihan menari bersama ibu-ibu sebagai persiapan penampilan dalam rangka memeriahkan HUT Kemerdekaan RI"
+            data-title="Digitalisasi UMKM & Latihan Tari"
+            data-short="Kunjungan UMKM dan latihan persiapan HUT RI."
+            data-desc="Melakukan kunjungan ke pelaku UMKM di Desa Pamulihan dalam rangka program digitalisasi UMKM serta latihan menari bersama ibu-ibu sebagai persiapan penampilan HUT Kemerdekaan RI."
           >
             <img src="img/kegiatan22.jpeg" alt="Digitalisasi UMKM dan Latihan Penampilan HUT RI" />
-            <span class="gal-caption"
-              ><b>Digitalisasi UMKM dan Latihan Penampilan HUT RI</b
-              ><span
-                >Melakukan kunjungan ke pelaku UMKM di Desa Pamulihan dalam rangka program digitalisasi UMKM dengan membantu mempromosikan produk melalui media sosial. Pada sore hari, dilanjutkan dengan latihan menari bersama ibu-ibu
-                sebagai persiapan penampilan dalam rangka memeriahkan HUT Kemerdekaan RI</span
-              ></span
-            >
+            <span class="gal-caption"><b>Digitalisasi UMKM & Latihan Tari</b><span>Kunjungan UMKM dan latihan persiapan HUT RI.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2024,21 +2013,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 23 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan23.jpeg"
-            data-caption="Persiapan dan Penampilan HUT Kemerdekaan RI — Membantu persiapan kegiatan dalam rangkaian perayaan HUT Kemerdekaan RI bersama warga Desa Pamulihan. Pada malam hari, berpartisipasi dalam acara dengan menampilkan tarian bersama ibu-ibu sebagai bagian dari rangkaian hiburan perayaan HUT Kemerdekaan RI"
+            data-title="Persiapan & Penampilan HUT RI"
+            data-short="Menampilkan tarian bersama ibu-ibu desa."
+            data-desc="Membantu persiapan kegiatan dalam rangkaian perayaan HUT Kemerdekaan RI bersama warga Desa Pamulihan. Pada malam hari, berpartisipasi dengan menampilkan tarian bersama ibu-ibu."
           >
             <img src="img/kegiatan23.jpeg" alt="Kegiatan 23" />
-            <span class="gal-caption"
-              ><b>Persiapan dan Penampilan HUT Kemerdekaan RI </b
-              ><span
-                >Membantu persiapan kegiatan dalam rangkaian perayaan HUT Kemerdekaan RI bersama warga Desa Pamulihan. Pada malam hari, berpartisipasi dalam acara dengan menampilkan tarian bersama ibu-ibu sebagai bagian dari rangkaian
-                hiburan perayaan HUT Kemerdekaan RI</span
-              ></span
-            >
+            <span class="gal-caption"><b>Persiapan & Penampilan HUT RI</b><span>Menampilkan tarian bersama ibu-ibu desa.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2047,21 +2030,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 24 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan24.jpeg"
-            data-caption="Pemasangan Papan Edukasi Waktu Urai Sampah — Melaksanakan program kerja pemasangan papan edukasi waktu urai sampah di lingkungan MTsN 6 Sumedang. Papan edukasi berisi informasi mengenai waktu yang dibutuhkan berbagai jenis sampah untuk terurai, sebagai media edukasi bagi siswa untuk meningkatkan kepedulian terhadap pengelolaan dan kebersihan lingkungan"
+            data-title="Pemasangan Papan Edukasi Sampah"
+            data-short="Pemasangan papan urai sampah di MTsN 6 Sumedang."
+            data-desc="Melaksanakan program kerja pemasangan papan edukasi waktu urai sampah di lingkungan MTsN 6 Sumedang untuk meningkatkan kepedulian terhadap kebersihan lingkungan."
           >
             <img src="img/kegiatan24.jpeg" alt="Kegiatan 24" />
-            <span class="gal-caption"
-              ><b>Pemasangan Papan Edukasi Waktu Urai Sampah</b
-              ><span
-                >Melaksanakan program kerja pemasangan papan edukasi waktu urai sampah di lingkungan MTsN 6 Sumedang. Papan edukasi berisi informasi mengenai waktu yang dibutuhkan berbagai jenis sampah untuk terurai, sebagai media edukasi
-                bagi siswa untuk meningkatkan kepedulian terhadap pengelolaan dan kebersihan lingkungan</span
-              ></span
-            >
+            <span class="gal-caption"><b>Pemasangan Papan Edukasi Sampah</b><span>Pemasangan papan urai sampah di MTsN 6 Sumedang.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2070,22 +2047,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 25 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan25.jpeg"
-            data-caption="Pembuatan Konten Digital dan Kegiatan Keagamaan Desa — Melakukan pengambilan foto dan video untuk bahan pembuatan konten after movie sebagai dokumentasi rangkaian kegiatan KKN. Selain itu, membuat konten promosi villa dengan menampilkan fasilitas, suasana, dan lingkungan sekitar sebagai upaya memperkenalkan potensi usaha di Desa Pamulihan melalui media digital. Pada malam hari, mengikuti kegiatan pengajian bersama warga Desa Pamulihan sebagai bentuk partisipasi dalam kegiatan keagamaan dan menjalin silaturahmi dengan masyarakat"
+            data-title="Konten Digital & Keagamaan Desa"
+            data-short="Pembuatan after movie, promosi villa, dan pengajian."
+            data-desc="Melakukan pengambilan foto/video untuk after movie dan promosi villa di Desa Pamulihan. Pada malam hari, mengikuti kegiatan pengajian bersama warga Desa Pamulihan."
           >
             <img src="img/kegiatan25.jpeg" alt="Kegiatan 25" />
-            <span class="gal-caption"
-              ><b>Pembuatan Konten Digital dan Kegiatan Keagamaan Desa</b
-              ><span
-                >Melakukan pengambilan foto dan video untuk bahan pembuatan konten after movie sebagai dokumentasi rangkaian kegiatan KKN. Selain itu, membuat konten promosi villa dengan menampilkan fasilitas, suasana, dan lingkungan
-                sekitar sebagai upaya memperkenalkan potensi usaha di Desa Pamulihan melalui media digital. Pada malam hari, mengikuti kegiatan pengajian bersama warga Desa Pamulihan sebagai bentuk partisipasi dalam kegiatan keagamaan dan
-                menjalin silaturahmi dengan masyarakat</span
-              ></span
-            >
+            <span class="gal-caption"><b>Konten Digital & Keagamaan Desa</b><span>Pembuatan after movie, promosi villa, dan pengajian.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2094,21 +2064,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 26 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan26.jpeg"
-            data-caption="Peringatan Maulid Nabi, IKD, dan Kegiatan Kebersamaan Desa — Mengikuti kegiatan peringatan Maulid Nabi dan kegiatan IKD yang bertempat di Kantor Desa Pamulihan bersama perangkat desa dan masyarakat. Pada malam hari, mengikuti kegiatan nonton bersama pertandingan sepak bola sebagai sarana kebersamaan dan mempererat silaturahmi dengan warga Desa Pamulihan"
+            data-title="Peringatan Maulid Nabi & IKD"
+            data-short="Kegiatan di Kantor Desa dan nonton bersama."
+            data-desc="Mengikuti kegiatan peringatan Maulid Nabi dan kegiatan IKD di Kantor Desa Pamulihan bersama perangkat desa. Malam harinya mengikuti nonton bersama pertandingan sepak bola."
           >
             <img src="img/kegiatan26.jpeg" alt="Kegiatan 26" />
-            <span class="gal-caption"
-              ><b>Peringatan Maulid Nabi, IKD, dan Kegiatan Kebersamaan Desa</b
-              ><span
-                >Mengikuti kegiatan peringatan Maulid Nabi dan kegiatan IKD yang bertempat di Kantor Desa Pamulihan bersama perangkat desa dan masyarakat. Pada malam hari, mengikuti kegiatan nonton bersama pertandingan sepak bola sebagai
-                sarana kebersamaan dan mempererat silaturahmi dengan warga Desa Pamulihan</span
-              ></span
-            >
+            <span class="gal-caption"><b>Peringatan Maulid Nabi & IKD</b><span>Kegiatan di Kantor Desa dan nonton bersama.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2117,22 +2081,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 27 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan27.jpeg"
-            data-caption="Pelayanan Masyarakat dan Pelaksanaan Program Kerja Desa — Membantu pelayanan masyarakat di Kantor Desa Pamulihan melalui pendaftaran Identitas Kependudukan Digital (IKD), pembagian serta pendataan penerima sembako. Selanjutnya, melakukan kunjungan dan konfirmasi data Anak Tidak Sekolah (ATS) kepada 10 anak. Kegiatan dilanjutkan dengan senam bersama ibu-ibu sebagai bentuk partisipasi dalam kegiatan masyarakat. Selain itu, melakukan koordinasi dengan MA GUPPI Cimasuk terkait rencana pembuatan e-book. Pada kegiatan lainnya, mengerjakan program kerja pembuatan tong sampah sebagai upaya mendukung kebersihan lingkungan"
+            data-title="Pelayanan Masyarakat & Proker Desa"
+            data-short="Pendaftaran IKD, pembagian sembako, dan senam."
+            data-desc="Membantu pelayanan masyarakat di Kantor Desa Pamulihan melalui pendaftaran IKD, pembagian sembako, pendataan anak tidak sekolah (ATS), senam bersama, dan pembuatan tong sampah."
           >
             <img src="img/kegiatan27.jpeg" alt="Kegiatan 27" />
-            <span class="gal-caption"
-              ><b>Pelayanan Masyarakat dan Pelaksanaan Program Kerja Desa</b
-              ><span
-                >Membantu pelayanan masyarakat di Kantor Desa Pamulihan melalui pendaftaran Identitas Kependudukan Digital (IKD), pembagian serta pendataan penerima sembako. Selanjutnya, melakukan kunjungan dan konfirmasi data Anak Tidak
-                Sekolah (ATS) kepada 10 anak. Kegiatan dilanjutkan dengan senam bersama ibu-ibu sebagai bentuk partisipasi dalam kegiatan masyarakat. Selain itu, melakukan koordinasi dengan MA GUPPI Cimasuk terkait rencana pembuatan e-book.
-                Pada kegiatan lainnya, mengerjakan program kerja pembuatan tong sampah sebagai upaya mendukung kebersihan lingkungan</span
-              ></span
-            >
+            <span class="gal-caption"><b>Pelayanan Masyarakat & Proker Desa</b><span>Pendaftaran IKD, pembagian sembako, dan senam.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2141,15 +2098,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 28 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan28.jpeg"
-            data-caption="Pendampingan UMKM dan Evaluasi Program Kerja — Melakukan pendampingan intensif kepada pelaku UMKM lokal dalam hal pemasaran digital serta mengevaluasi progress pelaksanaan seluruh program kerja KKN di Desa Pamulihan"
+            data-title="Pelayanan Administrasi & Sembako"
+            data-short="Pelayanan administrasi dan pembagian sembako."
+            data-desc="Membantu pelayanan masyarakat di Kantor Desa Pamulihan melalui pendaftaran Identitas Kependudukan Digital (IKD) serta membantu proses pembagian sembako kepada warga."
           >
             <img src="img/kegiatan28.jpeg" alt="Kegiatan 28" />
-            <span class="gal-caption"><b>Pendampingan UMKM & Evaluasi Proker</b><span>Melakukan pendampingan pemasaran digital kepada UMKM lokal dan evaluasi program kerja KKN.</span></span>
+            <span class="gal-caption"><b>Pelayanan Administrasi & Sembako</b><span>Pelayanan administrasi dan pembagian sembako.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2158,15 +2115,15 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 29 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan29.jpeg"
-            data-caption="Persiapan Penutupan dan Penarikan KKN — Melakukan persiapan akhir menjelang acara penutupan dan penarikan mahasiswa KKN Desa Pamulihan 3, termasuk koordinasi dengan pihak perangkat desa"
+            data-title="Pembuatan & Pemasangan Tempat Sampah"
+            data-short="Tempat sampah organik dan anorganik dari botol bekas."
+            data-desc="Membuat dan memasang tempat sampah organik dan anorganik berbahan dasar botol bekas air mineral yang dipasang di tiga Posyandu, Kantor Desa Pamulihan, dan RA Al-Baats."
           >
             <img src="img/kegiatan29.jpeg" alt="Kegiatan 29" />
-            <span class="gal-caption"><b>Persiapan Penutupan & Penarikan KKN</b><span>Persiapan akhir menjelang acara penutupan serta penarikan mahasiswa KKN bersama perangkat desa.</span></span>
+            <span class="gal-caption"><b>Pembuatan Tempat Sampah</b><span>Tempat sampah organik dan anorganik dari botol bekas.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2175,15 +2132,32 @@
               </svg>
             </span>
           </div>
-
-          <!-- KEGIATAN 30 -->
           <div
             class="gal-photo"
             data-full="img/kegiatan30.jpeg"
-            data-caption="Acara Penutupan dan Perpisahan KKN — Melaksanakan seremonial penutupan kegiatan KKN Desa Pamulihan 3 serta penyerahan cinderamata dan pamitan resmi kepada warga dan perangkat desa"
+            data-title="Pelepasan Mahasiswa KKN"
+            data-short="Acara pelepasan bersama DPL dan perangkat desa."
+            data-desc="Mengikuti kegiatan pelepasan mahasiswa KKN di Kantor Desa Pamulihan yang dihadiri oleh DPL, Kepala Desa Pamulihan, LPPM, perangkat desa, serta mahasiswa KKN."
           >
             <img src="img/kegiatan30.jpeg" alt="Kegiatan 30" />
-            <span class="gal-caption"><b>Acara Penutupan & Perpisahan KKN</b><span>Seremonial penutupan KKN Desa Pamulihan 3 serta penyerahan cinderamata dan pamitan resmi.</span></span>
+            <span class="gal-caption"><b>Pelepasan Mahasiswa KKN</b><span>Acara pelepasan bersama DPL dan perangkat desa.</span></span>
+            <span class="zoom-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.3-4.3" />
+                <path d="M11 8v6M8 11h6" />
+              </svg>
+            </span>
+          </div>
+          <div
+            class="gal-photo"
+            data-full="img/kegiatan31.jpeg"
+            data-title="Perpulangan Mahasiswa KKN"
+            data-short="Kembali ke kampus menggunakan kendaraan Hiace."
+            data-desc="Melakukan perpulangan mahasiswa KKN dari Desa Pamulihan menuju kampus setelah seluruh rangkaian kegiatan KKN selesai menggunakan kendaraan Hiace kampus."
+          >
+            <img src="img/kegiatan31.jpeg" alt="Kegiatan 31" />
+            <span class="gal-caption"><b>Perpulangan Mahasiswa KKN</b><span>Kembali ke kampus menggunakan kendaraan Hiace.</span></span>
             <span class="zoom-hint">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <circle cx="11" cy="11" r="7" />
@@ -2569,6 +2543,7 @@
       } else {
         counters.forEach((el) => (el.textContent = el.dataset.count));
       }
+
       // Lightbox galeri
       const galPhotos = Array.from(document.querySelectorAll(".gal-photo"));
       const lightbox = document.getElementById("lightbox");
@@ -2584,9 +2559,10 @@
         currentGalIndex = index;
         const photo = galPhotos[currentGalIndex];
         lightboxImg.src = photo.dataset.full;
-        const [capTitle, capDesc] = (photo.dataset.caption || "").split(" — ");
-        lightboxImg.alt = capTitle || "";
-        lightboxCaption.innerHTML = capDesc ? `<b>${capTitle}</b><span>${capDesc}</span>` : capTitle ? `<b>${capTitle}</b>` : "";
+        const capTitle = photo.dataset.title || "";
+        const capDesc = photo.dataset.desc || "";
+        lightboxImg.alt = capTitle;
+        lightboxCaption.innerHTML = `<b>${capTitle}</b><span>${capDesc}</span>`;
         lightboxCounter.textContent = `${currentGalIndex + 1} / ${galPhotos.length}`;
         lightbox.classList.add("open");
         document.body.style.overflow = "hidden";
